@@ -1,0 +1,22 @@
+/*
+    CSS variables to be used for the site
+*/
+:root {
+    --base-font-size: 1rem;
+}
+
+/*
+    boiler plate to set the box-sizing to border-box
+*/
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: var(--base-font-size);
+}

@@ -2,7 +2,7 @@
     CSS variables to be used for the site
 */
 :root {
-    --base-font-size: 1rem;
+    --base-font-size: 1.2rem;
 }
 
 /*
@@ -18,5 +18,61 @@ html {
 }
 
 body {
+    font-family: sans-serif;
     font-size: var(--base-font-size);
+}
+
+ul {
+    list-style-type: none;
+    margin: 1rem auto 0 auto;
+    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.hamburger, .close {
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+/*
+    Need to manually set the height of the svg icons or else they will keep expanding to fit
+    the entire parent container. Once this is set, the font-size property will affect the 
+    svg icons.
+*/
+.hamburger svg, .close svg {
+    height: 2em;
+}
+
+/*
+    Set the nav to an absolute position with a z-index of 1000 to make sure it's in front of everything
+    and set to the top left of the screen.
+*/
+nav {
+    background-color: white;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 1.5s ease,
+                opacity 1s ease;
+}
+
+/*
+    using the :target pseudo class to move the navbar header down when clicking the hamburger icon
+*/
+nav:target {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 1.5s ease,
+                opacity 1s ease;
 }

@@ -20,6 +20,8 @@ html {
 body {
     font-family: sans-serif;
     font-size: var(--base-font-size);
+    margin: 0;
+    padding: 0;
 }
 
 ul {
@@ -32,23 +34,10 @@ ul {
     align-items: center;
 }
 
-.hamburger, .close {
-    font-size: 1.2rem;
-    padding: 1rem;
-}
-
 /*
-    Need to manually set the height of the svg icons or else they will keep expanding to fit
-    the entire parent container. Once this is set, the font-size property will affect the 
-    svg icons.
-*/
-.hamburger svg, .close svg {
-    height: 2em;
-}
-
-/*
-    Set the nav to an absolute position with a z-index of 1000 to make sure it's in front of everything
-    and set to the top left of the screen.
+    Set the nav to an absolute position and set to the top left of the screen. Make it cover the entire display
+    with a white background by setting the width and height to 100vw and vh, respectively. Hide it by setting
+    opacity to 0.
 */
 nav {
     background-color: white;
@@ -61,11 +50,14 @@ nav {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    opacity: 1;
+    opacity: 0;
     transition: transform 0.5s ease,
                 opacity 1s ease;
 }
 
+/*
+    Set the list in the nav menu to be 5% off the screen upward to animate it coming in when opened.
+*/
 nav ul {
     color: red;
     transform: translateY(-5%);
@@ -73,51 +65,83 @@ nav ul {
 }
 
 /*
-    using the :target pseudo class to move the navbar header down when clicking the hamburger icon
+    Animate the nav menu by setting background opacity to 1 and translating the nav menu list items down
+    into view.
 */
-nav:target {
-    z-index: 1000;
-    transform: translateY(0);
+#nav-bar.open {
+    z-index: 2;
     opacity: 1;
-    transition: transform 0.5s ease,
-                opacity 1s ease;
+    transition: opacity 1s ease;
     
     ul {
         color: blue;
-        transform: translateY(0);
+        transform: translateY(10%);
         transition: transform 0.8s ease;
-    }
-
-    .top-bar {
-        transform: translate(0, 11px) rotate(-45deg);
-    }
-
-    .middle-bar {
-        opacity: 0;
-    }
-
-    .bottom-bar {
-        transform: translate(0, -11px) rotate(45deg);
     }
 }
 
-.nav-container {
-    width: 1.9rem;
-    height: 1.7rem;
+/*
+    Hamburger menu icon styling
+*/
+.hamburger-nav {
+    width: 1.7em;
+    height: 1.7em;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
+    z-index: 3;
+}
+.hamburger-nav:hover {
+    cursor: pointer;
+}
+.top-bar,
+.middle-bar,
+.bottom-bar {
+    background-color: black;
+    width: auto;
+    height: 4px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
 
-    .top-bar,
-    .middle-bar,
-    .bottom-bar {
-        background-color: black;
-        width: auto;
-        height: 5px;
-        border-radius: 5px;
-        transition: all 0.5s ease;
-    }
+/*
+    Animate the little bars in the hamburger menu to form an 'X'
+    When no space between class names: Element that has .top-bar and .open classes
+    When space between class names: Element with .open class inside of element with .top-bar class
+*/
+.top-bar.open {
+    transform: translate(0, 14px) rotate(-45deg);
+}
+.middle-bar.open {
+    opacity: 0;
+}
+.bottom-bar.open {
+    transform: translate(0, -14px) rotate(45deg);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    margin: 0;
+    padding: 1rem 2rem 1rem 1rem;
+    align-items: center;
+    gap: 1em;
+    border-bottom: 2px solid black;
+    box-shadow: 0px 0.1px 5px black;
+}
+
+.nav-title {
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-title p {
+    margin: 0;
+    line-height: 1.5em;
 }

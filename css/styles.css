@@ -3,6 +3,10 @@
 */
 :root {
     --base-font-size: 1.2rem;
+    --font-0-style: "corben", "Montserrat", sans-serif;
+    --deep-dark-blue: #111827;
+    --white: #ffffff;
+    --bright-pastel-green: #01c16a;
 }
 
 /*
@@ -18,7 +22,7 @@ html {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: var(--font-0-style);
     font-size: var(--base-font-size);
     margin: 0;
     padding: 0;
@@ -112,13 +116,13 @@ nav ul {
     When space between class names: Element with .open class inside of element with .top-bar class
 */
 .top-bar.open {
-    transform: translate(0, 14px) rotate(-45deg);
+    transform: translate(0, 0.73em) rotate(-45deg);
 }
 .middle-bar.open {
     opacity: 0;
 }
 .bottom-bar.open {
-    transform: translate(0, -14px) rotate(45deg);
+    transform: translate(0, -0.73em) rotate(45deg);
 }
 
 header {
@@ -133,15 +137,56 @@ header {
 }
 
 .nav-title {
-    display: flex;
-    flex-flow: column;
+    text-align: center;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    align-items: center;
 }
 
 .nav-title p {
     margin: 0;
     line-height: 1.5em;
+}
+
+@media(min-width: 800px) {
+    nav {
+        transition: all 0s;
+    }
+}
+
+@media(min-width: 850px) {
+    header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        gap: 7rem
+    }
+    nav {
+        opacity: 1;
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: auto;
+
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            flex: auto;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            gap: 7rem;
+        }
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .hamburger-nav {
+        display: none;
+        visibility: hidden;
+    }
 }

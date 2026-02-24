@@ -10,3 +10,22 @@ hamMenuIcon.addEventListener("click", () => {
     const navMenu = document.getElementById("nav-bar");
     navMenu.classList.toggle("open");
 });
+
+var player;
+function onYouTubeIFrameAPIReady() {
+    player = new YT.Player("player", {
+        videoId: 'MhCSIy0RpQ8',
+        playerVars: {
+            'playsinline': 1,
+            'controls': 0,
+            'origin': "https://www.youtube.com"
+        },
+        events: {
+            'onReady': onPlayerReady
+        }
+    })
+};
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}

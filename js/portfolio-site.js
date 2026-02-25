@@ -18,7 +18,10 @@ function onYouTubeIFrameAPIReady() {
         playerVars: {
             'playsinline': 1,
             'controls': 0,
-            'origin': "https://www.youtube.com"
+            'origin': "https://www.youtube.com",
+            'autoplay': 1,
+            'rel': 0,
+            'disablekb': 1
         },
         events: {
             'onReady': onPlayerReady
@@ -27,5 +30,12 @@ function onYouTubeIFrameAPIReady() {
 };
 
 function onPlayerReady(event) {
+    document.getElementById('player').style.borderColor = '#FF6D00';
     event.target.playVideo();
 }
+
+const testBtn = document.querySelector(".test");
+testBtn.addEventListener("click", () => {
+    const newURL = "https://www.youtube.com/embed/LDJrs22kqb0";
+    document.getElementById('player').setAttribute('src', newURL);
+});

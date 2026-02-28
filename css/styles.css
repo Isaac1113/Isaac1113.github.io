@@ -179,12 +179,14 @@ header {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
-    margin-bottom: 10px;
 }
 
 .carousel-gallery {
   display: flex;
-  width: 50vw;
+  width: 80%;
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
   overflow-x: auto;     /* Set the carousel to be our scroll container */
   scroll-snap-type: x mandatory;  /* Mandatory snapping images in the x-axis*/
   scroll-behavior: smooth;
@@ -199,6 +201,7 @@ header {
   animation-timeline: view(inline);
   
   img {
+    aspect-ratio: 1 / 1; /* Make the gallery cover images into squares*/
     width: 100%;
   }
 }

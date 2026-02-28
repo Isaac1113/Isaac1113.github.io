@@ -26,6 +26,7 @@ body {
     font-size: var(--base-font-size);
     margin: 0;
     padding: 0;
+    background: lightgray; /* TODO: Decide on background color*/
 }
 
 ul {
@@ -145,6 +146,75 @@ header {
 .nav-title p {
     margin: 0;
     line-height: 1.5em;
+}
+
+/* Styling for the quick video gallery */
+.gallery-wrapper {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px black;
+    margin: 0.5rem 1rem;
+    padding: 0em 1em;
+    max-width: 800px;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+
+    h2 {
+        margin: 0;
+        margin-top: 0.5em;
+        padding: 0;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* TODO: Style the iframe */
+#player {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 10px;
+}
+
+.carousel-gallery {
+  display: flex;
+  width: 50vw;
+  overflow-x: auto;     /* Set the carousel to be our scroll container */
+  scroll-snap-type: x mandatory;  /* Mandatory snapping images in the x-axis*/
+  scroll-behavior: smooth;
+  scrollbar-width: auto;  /* To hide the scrollbar */
+}
+
+.carousel-slide {
+  flex-shrink: 0;
+  width: calc(100% / 3); /* Show only 3 slides at a time*/
+  scroll-snap-align: center; /* Snap the slide to the beginning of the img*/
+  animation: slide;
+  animation-timeline: view(inline);
+  
+  img {
+    width: 100%;
+  }
+}
+
+@keyframes slide {
+  0%, 45%, 55%, 100% {
+    transform: scale(0.5);
+    border-radius: 20px;
+    filter: blur(6px) brightness(0.8);
+  }
+  
+  50% {
+    transform: scale(1);
+    border-radius: 4px;
+    filter: none;
+  }
 }
 
 @media(min-width: 800px) {

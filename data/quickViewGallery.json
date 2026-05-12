@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Labyrinth of Pushdown",
+        "description": "Traverse a maze and learn about push-down automata.",
+        "category": "Game Development",
+        "technology": "Unity",
+        "time": "January 2023 - April 2023",
+        "videoID": "MhCSIy0RpQ8",
+        "videoTitle": "Labyrinth of Pushdown Palindrome Level",
+        "coverImg": "img/PDAGame/CoverImage.png"
+    },
+    {
+        "name": "Slash Combat Tech Demonstration",
+        "description": "Fight a variety of enemies with a variety of weapons and Souls-like combat in this tech demonstration.",
+        "category": "Game Development",
+        "technology": "Unreal Engine 5",
+        "time": "November 2023 - January 2024",
+        "videoID": "LDJrs22kqb0",
+        "videoTitle": "Slash Gameplay Tech Demo",
+        "coverImg": "img/Slash/CoverImage.png"
+    },
+    {
+        "name": "Beatshot",
+        "description": "Rhythm based arcade game where players avoid enemies and their own bullets.",
+        "category": "Game Development",
+        "technology": "Unity",
+        "time": "September 2022 - November 2022",
+        "videoID": "TIjEzQFmSDo",
+        "videoTitle": "Unity Project Beatshot Gameplay",
+        "coverImg": "img/Beatshot/CoverImage.png"
+    },
+    {
+        "name": "Impact Miner",
+        "description": "An endless runner game where you get farther by smashing into minerals. Rogue like mechanics are present to help you get farther.",
+        "category": "Game Development",
+        "technology": "Unity",
+        "time": "February 2023 - May 2023",
+        "videoID": "sMCxA6FZ1Fc",
+        "videoTitle": "Impact Miner Full Gameplay",
+        "coverImg": "img/ImpactMiner/CoverImage.png"
+    },
+    {
+        "name": "Ray Tracer",
+        "description": "An animation of what my ray tracer is capable of rendering.",
+        "category": "Computer Graphics",
+        "technology": "Processing",
+        "time": "September 2022 - December 2022",
+        "videoID": "3Us5JCDH3ag",
+        "videoTitle": "Ray Tracer Final Animation",
+        "coverImg": "img/RayTracer/CoverImage.png"
+    }
+]

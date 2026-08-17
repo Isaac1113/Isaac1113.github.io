@@ -71,3 +71,10 @@ for (const item of galleryItems) {
 const endSlide = document.createElement("div");
 endSlide.classList.add("carousel-slide");
 quickViewGallery.appendChild(endSlide);
+
+const leftButton = document.querySelector(".left");
+const rightButton = document.querySelector(".right");
+
+leftButton.addEventListener("click", () => {
+    
+});

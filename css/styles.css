@@ -45,7 +45,7 @@ ul {
     opacity to 0.
 */
 nav {
-    background-color: white;
+    background-color: lightgray;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -187,7 +187,7 @@ header {
   margin: 0;
   margin-bottom: 5px;
   padding: 0;
-  overflow-x: auto;     /* Set the carousel to be our scroll container */
+  overflow-x: hidden;     /* Set the carousel to be our scroll container */
   scroll-snap-type: x mandatory;  /* Mandatory snapping images in the x-axis*/
   scroll-behavior: smooth;
   scrollbar-width: auto;  /* To hide the scrollbar */

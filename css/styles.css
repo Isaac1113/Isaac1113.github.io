@@ -176,17 +176,15 @@ header {
 
 .youtube-player-container {
     position: relative;
-    display: flex;
     width: 100%;
     height: auto;
-    aspect-ratio: calc(16 / 9);
+    aspect-ratio: 16 / 9;
 }
 
 /* TODO: Style the iframe */
 #player {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
+    height: 100%;
 }
 
 .youtube-player-overlay {

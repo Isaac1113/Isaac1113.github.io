@@ -9,6 +9,11 @@ const galleryItems = [
 const quickViewGallery = document.querySelector(".carousel-gallery");
 const hamMenuIcon = document.querySelector(".hamburger-nav");
 
+const pName = document.querySelector(".p-name");
+const pDescription = document.querySelector(".p-description");
+const pCategory = document.querySelector(".p-category");
+const pTechAndTime = document.querySelector(".p-tech-and-time");
+
 /* Add event listener to hamburger menu to transition to the open menu */
 hamMenuIcon.addEventListener("click", () => {
     // Animate the hamburger menu to be a close button
@@ -78,3 +83,34 @@ const rightButton = document.querySelector(".right");
 leftButton.addEventListener("click", () => {
     
 });
+
+// populate quick view gallery info based on which item is selected in the quick view carousel
+const quickViewGalleryDataURL = "https://raw.githubusercontent.com/Isaac1113/Isaac1113.github.io/refs/heads/main/data/quickViewGallery.json";
+let quickViewGalleryData;
+async function scrollCarousel(idx) {
+    if (quickViewGalleryData === undefined) {
+        const res = await fetch(quickViewGalleryDataURL);
+        quickViewGalleryData = await res.json();
+    }
+    
+    pName.textContent = quickViewGalleryData[idx].name;
+    pDescription.textContent = quickViewGalleryData[idx].description;
+    pCategory.textContent = quickViewGalleryData[idx].category;
+    pTechAndTime.textContent = `${quickViewGalleryData[idx].technology} (${quickViewGalleryData[idx].time})`;
+}
+
+scrollCarousel(0);
+
+// const myFirstPromise = new Promise((resolve, reject) => {
+//     const res = fetch(quickViewGalleryDataURL);
+//     res.then((resObj) => {
+//         resolve(resObj.json())
+//     });
+// });
+
+// myFirstPromise.then((quickViewGalleryData) => {
+//     pName.textContent = quickViewGalleryData[0].name;
+//     pDescription.textContent = quickViewGalleryData[0].description;
+//     pCategory.textContent = quickViewGalleryData[0].category;
+//     pTechAndTime.textContent = `${quickViewGalleryData[0].technology} (${quickViewGalleryData[0].time})`;
+// });

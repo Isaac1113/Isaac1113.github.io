@@ -14,6 +14,11 @@ const pDescription = document.querySelector(".p-description");
 const pCategory = document.querySelector(".p-category");
 const pTechAndTime = document.querySelector(".p-tech-and-time");
 
+const quickViewGalleryDataURL = "https://raw.githubusercontent.com/Isaac1113/Isaac1113.github.io/refs/heads/main/data/quickViewGallery.json";
+let projectIndex = 0;
+let numProjects = 0;
+let galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
+
 /* Add event listener to hamburger menu to transition to the open menu */
 hamMenuIcon.addEventListener("click", () => {
     // Animate the hamburger menu to be a close button
@@ -81,16 +86,48 @@ const leftButton = document.querySelector(".left");
 const rightButton = document.querySelector(".right");
 
 leftButton.addEventListener("click", () => {
+    // First recalculate how much we need to scroll the carousel because display might've been resized
+    galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
+
+    // set project details to new project and move the carousel to the left by one
+    if (projectIndex > 0) {
+        projectIndex--;
+        scrollCarousel(projectIndex);
+
+        quickViewGallery.scrollBy(-galleryMaxScrollWidth / (numProjects - 1), 0);
+    }
+
+    if (projectIndex <= 0) {
+        // TODO: Gray out the left button if on the first project
+        // TODO: Maybe check if button isn't already at first project too so that we don't repeat the graying out
+    }
+});
+
+rightButton.addEventListener("click", () => {
+    // First recalculate how much we need to scroll the carousel because display might've been resized
+    galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
     
+    // set project details to new project and move the carousel to the right by one
+    if (projectIndex < (numProjects - 1)) {
+        projectIndex++;
+        scrollCarousel(projectIndex);
+
+        quickViewGallery.scrollBy(galleryMaxScrollWidth / (numProjects - 1), 0);
+    }
+
+    if (projectIndex >= (numProjects - 1)) {
+        // TODO: Gray out the right button if on last project
+        // TODO: Maybe check if button isn't already at last project too so that we don't repeat the graying out
+    }
 });
 
 // populate quick view gallery info based on which item is selected in the quick view carousel
-const quickViewGalleryDataURL = "https://raw.githubusercontent.com/Isaac1113/Isaac1113.github.io/refs/heads/main/data/quickViewGallery.json";
 let quickViewGalleryData;
 async function scrollCarousel(idx) {
     if (quickViewGalleryData === undefined) {
         const res = await fetch(quickViewGalleryDataURL);
         quickViewGalleryData = await res.json();
+        numProjects = quickViewGalleryData.length;
     }
     
     pName.textContent = quickViewGalleryData[idx].name;

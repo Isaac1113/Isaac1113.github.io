@@ -19,10 +19,12 @@ let projectIndex = 0;
 let numProjects = 0;
 let galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
 
+const youtubePlayerContainer = document.querySelector(".youtube-player-container");
+
 /* Add event listener to hamburger menu to transition to the open menu */
-hamMenuIcon.addEventListener("click", () => {
+hamMenuIcon.addEventListener("click", (event) => {
     // Animate the hamburger menu to be a close button
-    for (const child of hamMenuIcon.children) {
+    for (const child of event.target.children) {
         child.classList.toggle("open");
     }
 
@@ -53,7 +55,7 @@ function onPlayerReady(event) {
 }
 
 const testBtn = document.querySelector(".test");
-testBtn.addEventListener("click", () => {
+testBtn.addEventListener("click", (event) => {
     // TODO: Need to set proper url parameters to disable keyboard, autoplay, etc.
     // TODO: Need to set proper origin domain where js code comes from (I think github pages)
     const newURL = "https://www.youtube.com/embed/LDJrs22kqb0";
@@ -85,7 +87,7 @@ quickViewGallery.appendChild(endSlide);
 const leftButton = document.querySelector(".left");
 const rightButton = document.querySelector(".right");
 
-leftButton.addEventListener("click", () => {
+leftButton.addEventListener("click", (event) => {
     // First recalculate how much we need to scroll the carousel because display might've been resized
     galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
 
@@ -103,7 +105,7 @@ leftButton.addEventListener("click", () => {
     }
 });
 
-rightButton.addEventListener("click", () => {
+rightButton.addEventListener("click", (event) => {
     // First recalculate how much we need to scroll the carousel because display might've been resized
     galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
     
@@ -137,6 +139,21 @@ async function scrollCarousel(idx) {
 }
 
 scrollCarousel(0);
+
+
+youtubePlayerContainer.addEventListener("mouseenter", (event) => {
+    console.log("mouseenter");
+    const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
+
+    youtubePlayerOverlay.classList.toggle("hovered");
+});
+
+youtubePlayerContainer.addEventListener("mouseleave", (event) => {
+    console.log("mouseleave");
+    const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
+
+    youtubePlayerOverlay.classList.toggle("hovered");
+});
 
 // const myFirstPromise = new Promise((resolve, reject) => {
 //     const res = fetch(quickViewGalleryDataURL);

@@ -132,6 +132,13 @@ async function scrollCarousel(idx) {
         numProjects = quickViewGalleryData.length;
     }
     
+    // TODO: Need to set proper origin domain where js code comes from (I think github pages)
+    // set the url src of the youtube embedded player to the correct project
+    const firstProjectVideoID = quickViewGalleryData[idx].videoID;
+    const firstProjectURL = `https://www.youtube.com/embed/${firstProjectVideoID}?enablejsapi=1&autoplay=1&mute=1&controls=0&disablekb=1&rel=0`;
+    document.getElementById('player').setAttribute('src', firstProjectURL);
+
+    // set project description that appears when hovering the project
     pName.textContent = quickViewGalleryData[idx].name;
     pDescription.textContent = quickViewGalleryData[idx].description;
     pCategory.textContent = quickViewGalleryData[idx].category;

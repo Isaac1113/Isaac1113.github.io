@@ -1,11 +1,3 @@
-const galleryItems = [
-    {videoID: "MhCSIy0RpQ8", title: "Labyrinth of Pushdown Palindrome Level", cover: "img/PDAGame/CoverImage.png"},
-    {videoID: "LDJrs22kqb0", title: "Slash Gameplay Tech Demo", cover: "img/Slash/CoverImage.png"},
-    {videoID: "TIjEzQFmSDo", title: "Unity Project Beatshot Gameplay", cover: "img/Beatshot/CoverImage.png"},
-    {videoID: "sMCxA6FZ1Fc", title: "Impact Miner Full Gameplay", cover: "img/ImpactMiner/CoverImage.png"},
-    {videoID: "3Us5JCDH3ag", title: "Ray Tracer Final Animation", cover: "img/RayTracer/CoverImage.png"}
-];
-
 const quickViewGallery = document.querySelector(".carousel-gallery");
 const hamMenuIcon = document.querySelector(".hamburger-nav");
 
@@ -15,6 +7,7 @@ const pCategory = document.querySelector(".p-category");
 const pTechAndTime = document.querySelector(".p-tech-and-time");
 
 const quickViewGalleryDataURL = "https://raw.githubusercontent.com/Isaac1113/Isaac1113.github.io/refs/heads/main/data/quickViewGallery.json";
+let quickViewGalleryData;
 let projectIndex = 0;
 let numProjects = 0;
 let galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
@@ -54,35 +47,31 @@ function onPlayerReady(event) {
     event.target.playVideo();
 }
 
-const testBtn = document.querySelector(".test");
-testBtn.addEventListener("click", (event) => {
-    // TODO: Need to set proper url parameters to disable keyboard, autoplay, etc.
-    // TODO: Need to set proper origin domain where js code comes from (I think github pages)
-    const newURL = "https://www.youtube.com/embed/LDJrs22kqb0";
-    document.getElementById('player').setAttribute('src', newURL);
-});
-
 /* Create the img elements from the galleyItems and populate the quick view gallery carousel */
-// Add an empty carousel-slide div to the front of the gallery carousel
-const frontSlide = document.createElement("div");
-frontSlide.classList.add("carousel-slide");
-quickViewGallery.appendChild(frontSlide);
-for (const item of galleryItems) {
-    const slide = document.createElement("div");
-    slide.classList.add("carousel-slide");
+function populateCarouselGallery() {
+    // Add an empty carousel-slide div to the front of the gallery carousel
+    const frontSlide = document.createElement("div");
+    frontSlide.classList.add("carousel-slide");
+    quickViewGallery.appendChild(frontSlide);
 
-    const slideImg = document.createElement("img");
-    slideImg.setAttribute("src", item.cover);
-    slideImg.setAttribute("alt", item.title + "cover image");
+    for (const item of quickViewGalleryData) {
+        const slide = document.createElement("div");
+        slide.classList.add("carousel-slide");
 
-    slide.appendChild(slideImg);
+        const slideImg = document.createElement("img");
+        slideImg.setAttribute("src", item.coverImg);
+        slideImg.setAttribute("alt", item.videoTitle + "cover image");
 
-    quickViewGallery.appendChild(slide);
+        slide.appendChild(slideImg);
+
+        quickViewGallery.appendChild(slide);
+    }
+
+    // Add an empty carousel-slide div to the end of the gallery carousel
+    const endSlide = document.createElement("div");
+    endSlide.classList.add("carousel-slide");
+    quickViewGallery.appendChild(endSlide);
 }
-// Add an empty carousel-slide div to the end of the gallery carousel
-const endSlide = document.createElement("div");
-endSlide.classList.add("carousel-slide");
-quickViewGallery.appendChild(endSlide);
 
 const leftButton = document.querySelector(".left");
 const rightButton = document.querySelector(".right");
@@ -123,13 +112,15 @@ rightButton.addEventListener("click", (event) => {
     }
 });
 
-// populate quick view gallery info based on which item is selected in the quick view carousel
-let quickViewGalleryData;
+/* populate quick view gallery info based on which item is selected in the quick view carousel */
 async function scrollCarousel(idx) {
+    // get data from json file for the first time and do inital population of gallery
     if (quickViewGalleryData === undefined) {
         const res = await fetch(quickViewGalleryDataURL);
         quickViewGalleryData = await res.json();
         numProjects = quickViewGalleryData.length;
+
+        populateCarouselGallery();
     }
     
     // TODO: Need to set proper origin domain where js code comes from (I think github pages)

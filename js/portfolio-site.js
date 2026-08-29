@@ -140,17 +140,19 @@ scrollCarousel(0);
 
 
 youtubePlayerContainer.addEventListener("mouseenter", (event) => {
-    console.log("mouseenter");
     const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
+    const arrowContainer = document.querySelector(".arrow-container");
 
     youtubePlayerOverlay.classList.toggle("hovered");
+    arrowContainer.classList.toggle("hovered");
 });
 
 youtubePlayerContainer.addEventListener("mouseleave", (event) => {
-    console.log("mouseleave");
     const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
+    const arrowContainer = document.querySelector(".arrow-container");
 
     youtubePlayerOverlay.classList.toggle("hovered");
+    arrowContainer.classList.toggle("hovered");
 });
 
 // const myFirstPromise = new Promise((resolve, reject) => {

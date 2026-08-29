@@ -243,11 +243,14 @@ header {
 }
 
 svg {
-    width: 50px;
-    height: 50px;
+    width: 20%;
+    height: 20%;
+    min-width: 50px;
+    min-height: 50px;
     fill: white;
     stroke: black;
     stroke-width: 15px;
+    cursor: pointer;
 }
 
 /* Styling for the gallery list items in the carousel */

@@ -14,6 +14,9 @@ let galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clie
 
 const youtubePlayerContainer = document.querySelector(".youtube-player-container");
 
+const leftButton = document.querySelector(".left");
+const rightButton = document.querySelector(".right");
+
 /* Add event listener to hamburger menu to transition to the open menu */
 hamMenuIcon.addEventListener("click", (event) => {    
     // Animate the hamburger menu to be a close button
@@ -72,9 +75,6 @@ function populateCarouselGallery() {
     endSlide.classList.add("carousel-slide");
     quickViewGallery.appendChild(endSlide);
 }
-
-const leftButton = document.querySelector(".left");
-const rightButton = document.querySelector(".right");
 
 leftButton.addEventListener("click", (event) => {
     // First recalculate how much we need to scroll the carousel because display might've been resized
@@ -145,6 +145,8 @@ youtubePlayerContainer.addEventListener("mouseenter", (event) => {
 
     youtubePlayerOverlay.classList.toggle("hovered");
     arrowContainer.classList.toggle("hovered");
+
+    document.getElementById('player').playVideo();
 });
 
 youtubePlayerContainer.addEventListener("mouseleave", (event) => {
@@ -153,6 +155,8 @@ youtubePlayerContainer.addEventListener("mouseleave", (event) => {
 
     youtubePlayerOverlay.classList.toggle("hovered");
     arrowContainer.classList.toggle("hovered");
+
+    document.getElementById('player').pauseVideo();
 });
 
 // const myFirstPromise = new Promise((resolve, reject) => {

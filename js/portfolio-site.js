@@ -15,9 +15,9 @@ let galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clie
 const youtubePlayerContainer = document.querySelector(".youtube-player-container");
 
 /* Add event listener to hamburger menu to transition to the open menu */
-hamMenuIcon.addEventListener("click", (event) => {
+hamMenuIcon.addEventListener("click", (event) => {    
     // Animate the hamburger menu to be a close button
-    for (const child of event.target.children) {
+    for (const child of hamMenuIcon.children) {
         child.classList.toggle("open");
     }
 

@@ -35,8 +35,8 @@ tag.src = 'https://www.youtube.com/iframe_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var player;
-function onYouTubeIFrameAPIReady() {
+let player;
+function onYouTubeIframeAPIReady() {
     player = new YT.Player("player", {
         events: {
             'onReady': onPlayerReady
@@ -146,8 +146,12 @@ youtubePlayerContainer.addEventListener("mouseenter", (event) => {
     youtubePlayerOverlay.classList.toggle("hovered");
     arrowContainer.classList.toggle("hovered");
 
-    document.getElementById('player').playVideo();
+    player.playVideo();
 });
+
+const testPlayer = document.getElementById('player');
+
+console.log(testPlayer);
 
 youtubePlayerContainer.addEventListener("mouseleave", (event) => {
     const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
@@ -156,7 +160,7 @@ youtubePlayerContainer.addEventListener("mouseleave", (event) => {
     youtubePlayerOverlay.classList.toggle("hovered");
     arrowContainer.classList.toggle("hovered");
 
-    document.getElementById('player').pauseVideo();
+    player.pauseVideo();
 });
 
 // const myFirstPromise = new Promise((resolve, reject) => {

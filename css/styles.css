@@ -247,10 +247,14 @@ svg {
     height: 20%;
     min-width: 50px;
     min-height: 50px;
-    fill: white;
+    fill: lightgray;
     stroke: black;
     stroke-width: 15px;
     cursor: pointer;
+}
+
+svg:hover {
+    fill: white;
 }
 
 /* Styling for the gallery list items in the carousel */
@@ -301,7 +305,7 @@ svg {
     }
 }
 
-/* Styling for mobile when there is a display of width 850 pixels */
+/* Styling for desktop/larger displays when there is a display width of at least 850 pixels */
 @media(min-width: 850px) {
     header {
         display: flex;
@@ -317,6 +321,7 @@ svg {
         width: auto;
         height: auto;
         overflow: auto;
+        visibility: visible;
 
         ul {
             display: flex;

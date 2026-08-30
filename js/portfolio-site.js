@@ -112,7 +112,9 @@ rightButton.addEventListener("click", (event) => {
     }
 });
 
-/* populate quick view gallery info based on which item is selected in the quick view carousel */
+/*  populate quick view gallery info based on which item is selected in the quick view carousel.
+    This is also basically working as an initalization function to get the data for the first time.
+*/
 async function scrollCarousel(idx) {
     // get data from json file for the first time and do inital population of gallery
     if (quickViewGalleryData === undefined) {
@@ -121,6 +123,22 @@ async function scrollCarousel(idx) {
         numProjects = quickViewGalleryData.length;
 
         populateCarouselGallery();
+    }
+
+    // disable the left arrow if on the first project
+    if (projectIndex === 0) {
+        leftButton.setAttribute("visibility", "hidden");
+    }
+    else {
+        leftButton.setAttribute("visibility", "visible");
+    }
+
+    // disable the right arrow if on the last project
+    if (projectIndex === (numProjects - 1)) {
+        rightButton.setAttribute("visibility", "hidden");
+    }
+    else {
+        rightButton.setAttribute("visibility", "visible");
     }
     
     // TODO: Need to set proper origin domain where js code comes from (I think github pages)

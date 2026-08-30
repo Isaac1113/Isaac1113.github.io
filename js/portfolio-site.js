@@ -17,6 +17,11 @@ const youtubePlayerContainer = document.querySelector(".youtube-player-container
 const leftButton = document.querySelector(".left");
 const rightButton = document.querySelector(".right");
 
+const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
+const arrowContainer = document.querySelector(".arrow-container");
+
+let removingOverlayBool = false;
+
 /* Add event listener to hamburger menu to transition to the open menu */
 hamMenuIcon.addEventListener("click", (event) => {    
     // Animate the hamburger menu to be a close button
@@ -156,30 +161,35 @@ async function scrollCarousel(idx) {
 
 scrollCarousel(0);
 
-
+/* reveal the overlay of project info on the iframe when mouse goes over iframe */
 youtubePlayerContainer.addEventListener("mouseenter", (event) => {
-    const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
-    const arrowContainer = document.querySelector(".arrow-container");
-
     youtubePlayerOverlay.classList.toggle("hovered");
     arrowContainer.classList.toggle("hovered");
+
+    // set a timeout to remove the overlay after 4 seconds so user can see the autoplaying video
+    if (!removingOverlayBool) {
+        setTimeout(removeIframeOverlay, 4000);
+
+        removingOverlayBool = true;
+    }
 
     player.playVideo();
 });
 
-const testPlayer = document.getElementById('player');
-
-console.log(testPlayer);
-
+/* remove the overlay of project info on the iframe when mouse leaves the iframe */
 youtubePlayerContainer.addEventListener("mouseleave", (event) => {
-    const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
-    const arrowContainer = document.querySelector(".arrow-container");
-
-    youtubePlayerOverlay.classList.toggle("hovered");
-    arrowContainer.classList.toggle("hovered");
+    youtubePlayerOverlay.classList.remove("hovered");
+    arrowContainer.classList.remove("hovered");
 
     player.pauseVideo();
 });
+
+function removeIframeOverlay() {
+    youtubePlayerOverlay.classList.remove("hovered");
+    arrowContainer.classList.remove("hovered");
+
+    removingOverlayBool = false;
+}
 
 // const myFirstPromise = new Promise((resolve, reject) => {
 //     const res = fetch(quickViewGalleryDataURL);

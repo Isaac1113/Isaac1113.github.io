@@ -92,11 +92,6 @@ leftButton.addEventListener("click", (event) => {
 
         quickViewGallery.scrollBy(-galleryMaxScrollWidth / (numProjects - 1), 0);
     }
-
-    if (projectIndex <= 0) {
-        // TODO: Gray out the left button if on the first project
-        // TODO: Maybe check if button isn't already at first project too so that we don't repeat the graying out
-    }
 });
 
 rightButton.addEventListener("click", (event) => {
@@ -109,11 +104,6 @@ rightButton.addEventListener("click", (event) => {
         scrollCarousel(projectIndex);
 
         quickViewGallery.scrollBy(galleryMaxScrollWidth / (numProjects - 1), 0);
-    }
-
-    if (projectIndex >= (numProjects - 1)) {
-        // TODO: Gray out the right button if on last project
-        // TODO: Maybe check if button isn't already at last project too so that we don't repeat the graying out
     }
 });
 

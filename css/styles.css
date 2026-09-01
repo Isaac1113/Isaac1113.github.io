@@ -161,7 +161,7 @@ header {
     border-radius: 30px;
     box-shadow: 0px 0px 5px black;
     margin: 2.5rem 1rem;
-    padding: 1em 1em;
+    padding: 0.5em 0.5em 1em 0.5em;
     min-width: 300px;
     max-width: 900px;
     display: flex;
@@ -173,16 +173,21 @@ header {
     h2 {
         margin: 0;
         padding: 0;
+        font-weight: normal;
+        font-size: 2rem;
     }
 
-    p {
+    .section-info {
         margin: 0;
         margin-top: -10px;
-        padding: 0 2em; 
+        padding: 0 0.5em;
+        font-family: "Montserrat";
+        line-height: 1.4em;
     }
 
     button {
         width: auto;
+        background: white;
         padding: 0.7em 0.5em;
         border: solid 2px black;
         transition: all ease 0.3s;
@@ -250,10 +255,14 @@ header {
     /* styling for paragraphs on small displays for the overlay */
     p, h3 {
         max-width: 100%;
-        margin-top: 0;      /*need to set back to 0 because of p change in .section-wrapper*/
+        margin: 0;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    h3 {
+        margin: 1em 0em;
     }
 
     .p-name {
@@ -266,6 +275,8 @@ header {
     }
 
     .p-tech-and-time {
+        margin: 0;
+        padding: 0;
         display: none;
     }
 }
@@ -389,6 +400,17 @@ svg:active {
     .youtube-player-overlay {
         .p-category, .p-tech-and-time {
             display: block;
+        }
+    }
+
+    .section-wrapper {
+        h2 {
+            font-size: 3rem;
+        }
+
+        .section-info {
+            max-width: 700px;
+            padding: 0em 2em;
         }
     }
 }

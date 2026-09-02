@@ -29,7 +29,7 @@ body {
     background: lightgray; /* TODO: Decide on background color*/
 }
 
-ul {
+.nav-ul {
     list-style-type: none;
     margin: 1rem auto 0 auto;
     padding: 0;
@@ -51,23 +51,24 @@ nav {
     visibility: hidden;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%; /* vw (view width) units include the width of the vertical scroll bar, too */
     height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     opacity: 0;
     transition: transform 0.5s ease,
-                opacity 1s ease;
+                opacity 1s ease,
+                visibility 1s ease;
 }
 
 /*
     Set the list in the nav menu to be 5% off the screen upward to animate it coming in when opened.
 */
-nav ul {
+nav .nav-ul {
     color: red;
     transform: translateY(-5%);
-    transition: transform 0.8s ease;
+    transition: all 0.8s ease;
 }
 
 /*
@@ -80,7 +81,7 @@ nav ul {
     visibility: visible;
     transition: opacity 1s ease;
     
-    ul {
+    .nav-ul {
         color: blue;
         transform: translateY(10%);
         transition: transform 0.8s ease;
@@ -128,6 +129,7 @@ nav ul {
     transform: translate(0, -0.73em) rotate(45deg);
 }
 
+/* styling for the header and the navigation title */
 header {
     display: grid;
     grid-template-columns: 10fr 1fr;
@@ -148,6 +150,47 @@ header {
 .nav-title p {
     margin: 0;
     line-height: 1.5em;
+}
+
+/* styling for the footer and contact me section */
+footer {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 2px black;
+    box-shadow: 0px -0.1px 5px black;
+    text-align: center;
+}
+
+.footer-text {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer .icons {
+    width: 50%;
+    font-size: var(--base-font-size);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 36px;
+        height: 36px;
+    }
 }
 
 /* Styling for the section wrappers that contain my info */

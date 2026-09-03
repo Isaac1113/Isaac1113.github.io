@@ -450,7 +450,11 @@ svg:active {
         justify-content: center;
         align-items: center;
         padding: 0.5rem;
-        gap: 7rem
+        gap: 7rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: lightgray;
     }
     nav {
         opacity: 1;

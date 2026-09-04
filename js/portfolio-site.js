@@ -1,5 +1,4 @@
 const quickViewGallery = document.querySelector(".carousel-gallery");
-const hamMenuIcon = document.querySelector(".hamburger-nav");
 
 const pName = document.querySelector(".p-name");
 const pDescription = document.querySelector(".p-description");
@@ -21,18 +20,6 @@ const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
 const arrowContainer = document.querySelector(".arrow-container");
 
 let removingOverlayBool = false;
-
-/* Add event listener to hamburger menu to transition to the open menu */
-hamMenuIcon.addEventListener("click", (event) => {    
-    // Animate the hamburger menu to be a close button
-    for (const child of hamMenuIcon.children) {
-        child.classList.toggle("open");
-    }
-
-    // Animate the nav menu appearing and come into view for mobile
-    const navMenu = document.getElementById("nav-bar");
-    navMenu.classList.toggle("open");
-});
 
 /* Load the YouTube IFrame Player API code asynchronously to control iframe youtube videos in js */
 var tag = document.createElement('script');
@@ -122,18 +109,18 @@ async function scrollCarousel(idx) {
 
     // disable the left arrow if on the first project
     if (projectIndex === 0) {
-        leftButton.setAttribute("visibility", "hidden");
+        leftButton.style.visibility = "hidden";
     }
     else {
-        leftButton.setAttribute("visibility", "visible");
+        leftButton.style.visibility = "visible";
     }
 
     // disable the right arrow if on the last project
     if (projectIndex === (numProjects - 1)) {
-        rightButton.setAttribute("visibility", "hidden");
+        rightButton.style.visibility = "hidden";
     }
     else {
-        rightButton.setAttribute("visibility", "visible");
+        rightButton.style.visibility = "visible";
     }
     
     // TODO: Need to set proper origin domain where js code comes from (I think github pages)

@@ -22,6 +22,10 @@ const arrowContainer = document.querySelector(".arrow-container");
 let removingOverlayBool = false;
 let initialLoadBool = true;
 
+const welcomeButton = document.getElementById("welcome-button");
+const skillsButton = document.getElementById("skills-button");
+const galleryButton = document.getElementById("gallery-button");
+
 /* Load the YouTube IFrame Player API code asynchronously to control iframe youtube videos in js */
 var tag = document.createElement('script');
 tag.src = 'https://www.youtube.com/iframe_api';
@@ -69,6 +73,7 @@ function populateCarouselGallery() {
     quickViewGallery.appendChild(endSlide);
 }
 
+/* scroll the carousel to the left by one and update project details */
 leftButton.addEventListener("click", (event) => {
     // First recalculate how much we need to scroll the carousel because display might've been resized
     galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
@@ -84,6 +89,7 @@ leftButton.addEventListener("click", (event) => {
     }
 });
 
+/* scroll the carousel to the right by one and update project details */
 rightButton.addEventListener("click", (event) => {
     // First recalculate how much we need to scroll the carousel because display might've been resized
     galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
@@ -185,6 +191,18 @@ function removeIframeOverlay() {
 
     removingOverlayBool = false;
 }
+
+/* scroll the page to the quick view gallery on button click */
+welcomeButton.addEventListener("click", (event) => {
+    const gallerySection = document.querySelector(".gallery-section");
+
+    gallerySection.scrollIntoView({behavior: "smooth", block: "start"});
+});
+
+/* change page to the portfolio page to view projects on button click */
+galleryButton.addEventListener("click", (event) => {
+    window.location.href = "./portfolio.html";
+});
 
 // const myFirstPromise = new Promise((resolve, reject) => {
 //     const res = fetch(quickViewGalleryDataURL);

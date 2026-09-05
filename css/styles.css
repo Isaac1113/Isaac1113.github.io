@@ -77,6 +77,12 @@
     }
 }
 
+.gallery-section {
+    /* so that on welcome-button click, it scrolls to 20px above gallery-section so that it's
+        not flush with the top of the screen */
+    scroll-margin-top: 20px;
+}
+
 /* Styling for the quick video gallery, the youtube iframe, and the iframe overlay */
 .youtube-player-container {
     position: relative;
@@ -252,5 +258,11 @@ svg:active {
         h3 {
             font-size: 2.4rem;
         }
+    }
+
+    .gallery-section {
+        /* so that on welcome-button click, it scrolls to 80px above gallery-section so that header
+            in desktop view doesn't get in the way */
+        scroll-margin-top: 80px;
     }
 }

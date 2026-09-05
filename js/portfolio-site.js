@@ -20,6 +20,7 @@ const youtubePlayerOverlay = document.querySelector(".youtube-player-overlay");
 const arrowContainer = document.querySelector(".arrow-container");
 
 let removingOverlayBool = false;
+let initialLoadBool = true;
 
 /* Load the YouTube IFrame Player API code asynchronously to control iframe youtube videos in js */
 var tag = document.createElement('script');
@@ -39,7 +40,7 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
     // Need to add border in CSS to see this color
     document.getElementById('player').style.borderColor = '#FF6D00';
-    event.target.playVideo();
+    // event.target.playVideo();
 }
 
 /* Create the img elements from the galleyItems and populate the quick view gallery carousel */
@@ -72,12 +73,14 @@ leftButton.addEventListener("click", (event) => {
     // First recalculate how much we need to scroll the carousel because display might've been resized
     galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
 
-    // set project details to new project and move the carousel to the left by one
+    // set project details to new project, move the carousel to the left by one, and add project details overlay
     if (projectIndex > 0) {
         projectIndex--;
         scrollCarousel(projectIndex);
 
         quickViewGallery.scrollBy(-galleryMaxScrollWidth / (numProjects - 1), 0);
+
+        addIframeOverlay();
     }
 });
 
@@ -85,12 +88,14 @@ rightButton.addEventListener("click", (event) => {
     // First recalculate how much we need to scroll the carousel because display might've been resized
     galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
     
-    // set project details to new project and move the carousel to the right by one
+    // set project details to new project, move the carousel to the right by one, and add project details overlay
     if (projectIndex < (numProjects - 1)) {
         projectIndex++;
         scrollCarousel(projectIndex);
 
         quickViewGallery.scrollBy(galleryMaxScrollWidth / (numProjects - 1), 0);
+
+        addIframeOverlay();
     }
 });
 
@@ -122,11 +127,18 @@ async function scrollCarousel(idx) {
     else {
         rightButton.style.visibility = "visible";
     }
+
+    // don't autoplay on initial load
+    let autoplayString = "autoplay=1&";
+    if (initialLoadBool) {
+        autoplayString = "autoplay=0&";
+        initialLoadBool = false;
+    }
     
     // TODO: Need to set proper origin domain where js code comes from (I think github pages)
     // set the url src of the youtube embedded player to the correct project
     const firstProjectVideoID = quickViewGalleryData[idx].videoID;
-    const firstProjectURL = `https://www.youtube.com/embed/${firstProjectVideoID}?enablejsapi=1&autoplay=1&mute=1&controls=0&disablekb=1&rel=0`;
+    const firstProjectURL = `https://www.youtube.com/embed/${firstProjectVideoID}?enablejsapi=1&${autoplayString}mute=1&controls=0&disablekb=1&rel=0`;
     document.getElementById('player').setAttribute('src', firstProjectURL);
 
     // set project description that appears when hovering the project
@@ -140,16 +152,8 @@ scrollCarousel(0);
 
 /* reveal the overlay of project info on the iframe when mouse goes over iframe */
 youtubePlayerContainer.addEventListener("mouseenter", (event) => {
-    youtubePlayerOverlay.classList.toggle("hovered");
-    arrowContainer.classList.toggle("hovered");
-
-    // set a timeout to remove the overlay after 4 seconds so user can see the autoplaying video
-    if (!removingOverlayBool) {
-        setTimeout(removeIframeOverlay, 4000);
-
-        removingOverlayBool = true;
-    }
-
+    addIframeOverlay();
+    
     player.playVideo();
 });
 
@@ -161,6 +165,20 @@ youtubePlayerContainer.addEventListener("mouseleave", (event) => {
     player.pauseVideo();
 });
 
+/* add the project details overlay on the Iframe */
+function addIframeOverlay() {
+    youtubePlayerOverlay.classList.add("hovered");
+    arrowContainer.classList.add("hovered");
+
+    // set a timeout to remove the overlay after 4 seconds so user can see the autoplaying video
+    if (!removingOverlayBool) {
+        setTimeout(removeIframeOverlay, 4000);
+
+        removingOverlayBool = true;
+    }
+}
+
+/* remove the project details overlay on the Iframe. This is called after overlay has been shown for some seconds */
 function removeIframeOverlay() {
     youtubePlayerOverlay.classList.remove("hovered");
     arrowContainer.classList.remove("hovered");

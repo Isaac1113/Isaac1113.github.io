@@ -1,0 +1,66 @@
+[
+    {
+        "title": "Labyrinth of Pushdown",
+        "description": "Labyrinth of Pushdown is a VR game made in Unity for the Meta Quest 2 using the XR plugins. The game is made as a tool to help students visualize some computer science concepts.",
+        "category": "VR Game Development",
+        "technology": "Unity",
+        "time": "January 2023 - April 2023",
+        "coverImg": "img/PDAGame/CoverImage.png"
+    },
+    {
+        "title": "Slash Combat Tech Demo",
+        "description": "This project was made using Unreal Engine 5, primarily with C++ and minimal Blueprints, to create Souls-like combat mechanics and enemies as well as other systems, such as items and weapons.",
+        "category": "Game Development",
+        "technology": "Unreal Engine 5",
+        "time": "November 2023 - January 2024",
+        "coverImg": "img/Slash/CoverImage.png"
+    },
+    {
+        "title": "Beatshot",
+        "description": "Beatshot is a rhythm-based arcade game made in Unity where the player must move and shoot enemies in sync to the beat of the game while also avoiding their own bullets that bounce around the level.",
+        "category": "Game Development",
+        "technology": "Unity",
+        "time": "September 2022 - November 2022",
+        "coverImg": "img/Beatshot/CoverImage.png"
+    },
+    {
+        "title": "Impact Miner",
+        "description": "Impact Miner is an endless runner arcade game with rogue lite mechanics made in Unity where the goal is to collide with minerals to get points and use those points for upgrades to get a further distance in the next run.",
+        "category": "Game Development",
+        "technology": "Unity",
+        "time": "February 2023 - May 2023",
+        "coverImg": "img/ImpactMiner/CoverImage.png"
+    },
+    {
+        "title": "Ray Tracer",
+        "description": "This project was made using the Processing software to create a simple ray tracer using linear algebra and vector math that's capable of rendering images of shapes with reflections and refractions.",
+        "category": "Computer Graphics",
+        "technology": "Java Processing",
+        "time": "September 2022 - December 2022",
+        "coverImg": "img/RayTracer/EarthAndDeathstar.png"
+    },
+    {
+        "title": "Sonic Mini Project",
+        "description": "This Unity project was made to simulate the physics and gameplay of the original Sonic the Hedgehog on the Game Gear hand held console.",
+        "category": "Game Development",
+        "technology": "Unity",
+        "time": "March 2023 (1 week)",
+        "coverImg": "img/Sanic/SanicCover.png"
+    },
+    {
+        "title": "URG Racing",
+        "description": "URG Racing is an anti-gravity racing game made in the Unity game engine where players race against AI using mechanics such as drifting and items gained from item boxes.",
+        "category": "Game Development",
+        "technology": "Unity",
+        "time": "March 2023 - May 2023",
+        "coverImg": "img/URG/URGCover.png"
+    },
+    {
+        "title": "FOMO Tracker",
+        "description": "The FOMO Tracker app is a mobile app created using Google's Flutter app development framework with the Dart programming language that lets a user create an account, login, and browse and view games from a NoSQL database to help them track quests in the games they play.",
+        "category": "Mobile App Development",
+        "technology": "Flutter",
+        "time": "January 2023 (3 weeks)",
+        "coverImg": "img/FOMO/FOMOLoginScreen.png"
+    }
+]

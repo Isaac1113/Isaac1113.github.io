@@ -153,6 +153,48 @@ header {
     line-height: 1.5em;
 }
 
+/* Styling for the section wrappers that contain my info */
+.info-section-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.section-wrapper {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px black;
+    margin: 1.25rem 1rem;
+    padding: 0.5em 0.5em 1.25em 0.5em;
+    min-width: 300px;
+    max-width: 900px;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+/* styling for the buttons on all pages */
+button {
+    margin-top: 3px;
+    width: auto;
+    background: white;
+    padding: 0.7em 0.5em;
+    border: solid 2px black;
+    transition: all ease 0.3s;
+}
+
+button:hover {
+    background: darkblue;
+    color: white;
+}
+
 /* styling for the footer and contact me section */
 footer {
     display: flex;
@@ -263,5 +305,14 @@ footer .icons {
     .hamburger-nav {
         display: none;
         visibility: hidden;
+    }
+
+    .section-wrapper {
+        margin: 2.5rem 1rem;
+
+        .section-info {
+            max-width: 700px;
+            padding: 0em 2em;
+        }
     }
 }

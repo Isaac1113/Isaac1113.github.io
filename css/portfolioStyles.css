@@ -18,7 +18,7 @@
     }
     
     img {
-        padding: 0.5em 0;
+        margin: 0.5em 0;
     }
 }
 
@@ -74,5 +74,50 @@ h3 {
         h1 {
             font-size: 3rem;
         }
+    }
+
+    .section-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "img info"
+            "img butn";
+        column-gap: 1em;
+        row-gap: 0;
+        margin: 1.5rem 1rem;
+        padding: 1em 1.2em;
+        max-width: 850px;
+
+        .section-info {
+            max-width: none;
+            padding: 1em 0 0 0;
+        }
+    }
+
+    button {
+        grid-column: 2;
+        grid-row: 2;
+        grid-area: butn;
+        /*margin: 0 auto;*/ /* use this if you want to center the button in its grid area */
+        width: 100px;
+    }
+
+    img {
+        grid-area: img;
+        margin: 0;
+        aspect-ratio: 15 / 9;
+    }
+
+    .project-information {
+        grid-area: info;
+        padding: 0 0 0.5em 0;
+    }
+
+    h2 {
+        padding-bottom: 0.3em;
+    }
+
+    h3 {
+        padding-left: 0;
     }
 }

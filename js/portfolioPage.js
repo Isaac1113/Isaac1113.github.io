@@ -24,6 +24,14 @@ async function populateProjectList() {
 
         const pDescription = document.createElement("p");
         pDescription.textContent = project.description;
+        pDescription.classList.add("section-info");
+
+        const pDiv = document.createElement("div");
+        pDiv.appendChild(h2Title);
+        pDiv.appendChild(h3Time);
+        pDiv.appendChild(h3CatAndTech);
+        pDiv.appendChild(pDescription);
+        pDiv.classList.add("project-information");
 
         // TODO: add button and click event to button
         const projButton = document.createElement("button");
@@ -32,10 +40,7 @@ async function populateProjectList() {
         projButton.addEventListener("click", goToProjectPage);
 
         projContainer.appendChild(projImg);
-        projContainer.appendChild(h2Title);
-        projContainer.appendChild(h3Time);
-        projContainer.appendChild(h3CatAndTech);
-        projContainer.appendChild(pDescription);
+        projContainer.appendChild(pDiv);
         projContainer.appendChild(projButton);
 
         projectListUL.appendChild(projContainer);

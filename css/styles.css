@@ -1,5 +1,4 @@
 /* Styling for the section wrappers that contain my info */
-
 .section-wrapper {
     h2 {
         margin: 0;
@@ -191,14 +190,6 @@ svg:active {
     border-radius: 4px;
     filter: none;
   }
-}
-
-/* This @media used to prevent the header list from animating when shrinking 
-    the width to be of a mobile width */
-@media(min-width: 800px) {
-    nav {
-        transition: all 0s;
-    }
 }
 
 /* Styling for desktop/larger displays when there is a display width of at least 850 pixels */

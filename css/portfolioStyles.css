@@ -1,0 +1,78 @@
+/* styling for the main info section that wraps all of the info */
+.info-section-container {
+    text-align: center;
+
+    ul {
+        display: flex;
+        flex-flow: column nowrap;
+        margin: 0;
+        padding: 0;
+        gap: 0.5rem;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        font-size: 2.5rem;
+    }
+    
+    img {
+        padding: 0.5em 0;
+    }
+}
+
+/* only style the p that are direct children of info-section-container class */
+.info-section-container > p {
+    padding: 0 0.5em;
+    max-width: 650px;
+}
+
+/* styling for the project sections and the elements in the project info */
+.section-wrapper {
+    border-radius: 10px;
+    padding-top: 1rem;
+    max-width: 500px;
+    gap: 0;
+}
+
+.project-information {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: start;
+    align-items: flex-start;
+    padding: 0 0 1em 0.7em;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1.3em;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    padding-left: 0.5em;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+}
+
+.section-info {
+    margin: 0;
+    padding-top: 1em;
+    font-family: "Montserrat";
+    line-height: 1.4em;
+}
+
+/* Styling for desktop/larger displays when there is a display width of at least 850 pixels */
+@media(min-width: 850px) {
+    .info-section-container {
+        h1 {
+            font-size: 3rem;
+        }
+    }
+}

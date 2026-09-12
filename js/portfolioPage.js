@@ -35,6 +35,7 @@ async function populateProjectList() {
         pDiv.classList.add("project-information");
 
         // add click event to button that opens project with specific project number
+        // for the i to be the correct projNumber, this has to be in a normal for loop so that i scoped to the function
         const projButton = document.createElement("button");
         projButton.type = "button";
         projButton.textContent = "Learn More";
@@ -52,6 +53,7 @@ async function populateProjectList() {
 
 /* Open the project page with a string parameter of the project num at the end of URL */
 function goToProjectPage(projNumber) {
+    // const projURL = new URL("./PortfolioSite/project.html", "http://127.0.0.1:3000/"); //local server URL
     const projURL = new URL("https://isaac1113.github.io/project.html");
     projURL.searchParams.append("projNum", projNumber);
 

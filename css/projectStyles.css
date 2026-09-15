@@ -1,0 +1,17 @@
+.project-info-container.leave {
+    animation-name: leave;
+    animation-duration: 0.5s;
+
+}
+
+@keyframes leave {
+    from {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}

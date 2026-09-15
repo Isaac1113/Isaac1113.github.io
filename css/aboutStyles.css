@@ -17,7 +17,7 @@ main {
     h1 {
         margin: 0;
         padding: 0;
-        padding-bottom: 0.3em;
+        padding-bottom: 0.2em;
         font-weight: normal;
         font-size: 2.5rem;
     }
@@ -98,6 +98,13 @@ main {
 
 /* Styling for desktop/larger displays when there is a display width of at least 850 pixels */
 @media(min-width: 850px) {
+    main {
+        h1 {
+            font-size: 3.5rem;
+            padding: 0;
+        }
+    }
+
     .education-section {
         display: grid;
         grid-template-columns: 1fr 2fr;

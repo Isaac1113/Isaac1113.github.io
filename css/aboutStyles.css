@@ -1,15 +1,17 @@
-/* styling for */
+/* styling for the text and alignment of main about content*/
 main {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     padding: 1rem;
+    margin: 0 auto;     /*center all elements with a max-width*/
     width: 100%;
     min-width: 300px;
+    max-width: 900px;
 
-    .education-container, .skills-container, .me-container, .button-container, h1 {
-        width: 100%;
-        max-width: 900px;
+    h1, .button-container {
+        width: 100%;        /*to push the h1 all the way to the left*/
+        margin-right: auto;
     }
 
     h1 {
@@ -36,19 +38,90 @@ main {
     }
 }
 
+/* styling for the text in the education section */
 .education-section {
     margin: 0.5em 0 1em 0;
     padding: 0;
+    display: auto;
 
-    .edu-info {
+    .edu-info, .edu-date {
         line-height: 1.5em;
         margin: 0;
         padding: 0;
     }
 
     .edu-desc {
+        margin: 0.5em 0 0 0.5em;
         font-family: "Montserrat";
         font-weight: 400;
-        margin: 0.5em 0 0 0.5em;
+        font-size: 0.9em;
+    }
+}
+
+/* styling for the text in the Skills and Abilities section */
+.skills-container {
+    margin-bottom: 1em;
+}
+
+.skills-section {
+    margin: 0;
+    padding: 0;
+
+    ul {
+        margin: 0;
+        font-family: "Montserrat";
+        font-weight: 500;
+
+        ul {
+            margin: 0.25em 0;
+            font-weight: 400;
+            font-size: 0.9em;
+        }
+    }
+}
+
+/* styling for the text in the me section */
+.me-container {
+    margin-bottom: 0.5em;
+
+    p {
+        margin: 0;
+        margin-left: 0.5em;
+        padding: 0.5em 0;           /* if using margin, then sace between merges for a 
+                                       total of 0.5em between the paragraphs. Using
+                                       padding will have a total of 1em between the p's */
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 0.9em;
+    }
+}
+
+/* Styling for desktop/larger displays when there is a display width of at least 850 pixels */
+@media(min-width: 850px) {
+    .education-section {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+                            "info desc"
+                            "date desc";
+        align-items: center;
+
+        .edu-info {
+            grid-area: info;
+            margin-top: auto;       /*push info to bottom of grid area*/
+        }
+
+        .edu-date {
+            grid-area: date;
+            margin-bottom: auto;    /*push date to top of grid area*/
+        }
+
+        .edu-desc {
+            grid-area: desc;
+            margin: 0;
+            padding: 0;
+            line-height: 2em;
+        }
     }
 }

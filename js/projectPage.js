@@ -12,6 +12,14 @@ nextButton.addEventListener("click", (event) => {
     projectInfoContainer.classList.toggle("leave");
 });
 
+
 projectInfoContainer.addEventListener("animationend", (event) => {
-    projectInfoContainer.classList.toggle("leave");
+    if (projectInfoContainer.classList.contains("leave")) {
+        projectInfoContainer.classList.toggle("leave");
+
+        projectInfoContainer.classList.toggle("enter");
+    }
+    else if (projectInfoContainer.classList.contains("enter")) {
+        projectInfoContainer.classList.toggle("enter");
+    }
 });

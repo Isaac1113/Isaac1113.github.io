@@ -1,7 +1,11 @@
 .project-info-container.leave {
     animation-name: leave;
     animation-duration: 0.5s;
+}
 
+.project-info-container.enter {
+    animation-name: enter;
+    animation-duration: 0.5s;
 }
 
 @keyframes leave {
@@ -13,5 +17,17 @@
     to {
         transform: translateY(100%);
         opacity: 0;
+    }
+}
+
+@keyframes enter {
+    from {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
     }
 }

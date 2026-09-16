@@ -1,0 +1,43 @@
+{
+    "name": "Labyrinth of Pushdown",
+    "description": "Labyrinth of Pushdown is a VR game made in the Unity engine with the XR Interaction plugins that allow for VR development for the Meta Quest 2. The player traverses a maze of rooms where the only way to pass through doors is by collecting the correct symbol in the maze. Players can interact with pillars that will add or remove symbols to their sword which they can then use as a key to traverse the maze. Players have access to a map on their back of their hand that will help them to analyze the maze so that they can figure out the correct symbols to make it to the final room. This game was made as a senior project for Cal Poly Pomona and it was a part of a grad student's masters thesis to teach computer science concepts using VR games. This game was created to help students visualize the concept of Push-Down Automata where the maze represents a push-down automaton and the collected symbols represent a valid string of the automaton once they reach the end of the level. At the end of each level, there is a quiz section that asks a multiple choice question to test whether the student can understand what the language of the push-down automaton is.",
+    "contribution": "I contributed to creating the main system of the game which are to check whether the player has met the correct requirements to pass to the next room. This system controls which locks are associated with each door and which doors are associated with each room; this system also disables the other locks of the room so that the player doesn't sequence break the game. I created simple hand animations with a blend tree that transitions between 4 different positions depending on which grip buttons of the VR controller are pressed. I also contributed to the level design of the two levels by populating them with various assets and decorations.",
+    "category": "VR Game Development",
+    "technology": "Unity",
+    "time": "January 2023 - April 2023",
+    "videoID": "MhCSIy0RpQ8",
+    "videoTitle": "Labyrinth of Pushdown Palindrome Level",
+    "coverImg": "img/PDAGame/CoverImage.png",
+    "files": [
+        {
+            "type": "mp4",
+            "title": "Labyrinth of Pushdown Level Design",
+            "description": "This video is of the Unity editor that showcases the level design of the second level of the game.",
+            "contribution": "I was responsible for decorating and designing both of the levels of the game."
+        },
+        {
+            "type": "mp4",
+            "title": "Labyrinth of Pushdown Hand Animations",
+            "description": "This video demonstrates the hand animations that transitions between different poses depending on whether two buttons are pressed or only one.",
+            "contribution": "I was responsible for implementing the hand animations. The animation is made using a blend tree that transitions between 4 different poses. In this test, I set up 4 keyboard buttons to test whether the animations work correctly."
+        },
+        {
+            "type": "mp4",
+            "title": "Labyrinth of Pushdown Main Menu Scene",
+            "description": "TThe player spawns in this main menu level where they have the option to choose a level by inserting the sword into the pillar.",
+            "contribution": "These pillars are similar to the other lock pillars in the game that open doors, but this pillar simply transitions to the correct level."
+        },
+        {
+            "type": "mp4",
+            "title": "Mini Map on Left Hand",
+            "description": "This mini map is always hovering on the player's left hand and can be viewed by looking at their left hand as if they had a watch on.",
+            "contribution": "I helped to create the mini map system which works by having a large plane with the mini map texture hovering above the entire map and a camera is pointed down at it tracking the player. A second plane is attached to the wrist which displays the view of the camera in the sky."
+        },
+        {
+            "type": "mp4",
+            "title": "Enemy in the Labyrinth of Pushdown",
+            "description": "Simple enemies float around in the levels of the game. They simply track the player and move towards them when they have direct line of sight.",
+            "contribution": "I contributed to making the enemy AI which simply involves the enemy moving towards the player when it has direct line of sight."
+        }
+    ]
+}

@@ -18,6 +18,8 @@ projectInfoContainer.addEventListener("animationend", (event) => {
         projectInfoContainer.classList.toggle("leave");
 
         projectInfoContainer.classList.toggle("enter");
+
+        // TODO: load the next project data and set all text elements to new project
     }
     else if (projectInfoContainer.classList.contains("enter")) {
         projectInfoContainer.classList.toggle("enter");

@@ -154,7 +154,16 @@ async function scrollCarousel(idx) {
     pTechAndTime.textContent = `${quickViewGalleryData[idx].technology} (${quickViewGalleryData[idx].time})`;
 }
 
-scrollCarousel(0);
+/* scroll the carousel to a specific position based on project index */
+function scrollCarouselTo(idx) {
+    // First recalculate how much we need to scroll the carousel because display might've been resized
+    galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
+
+    quickViewGallery.scrollTo((galleryMaxScrollWidth / (numProjects - 1)) * idx, 0);
+}
+
+scrollCarousel(0);      // load all data and set gallery to the first project
+scrollCarouselTo(0);    // make sure carousel is set to beginning when page is loaded
 
 /* reveal the overlay of project info on the iframe when mouse goes over iframe */
 youtubePlayerContainer.addEventListener("mouseenter", (event) => {
@@ -202,6 +211,14 @@ welcomeButton.addEventListener("click", (event) => {
 /* change page to the portfolio page to view projects on button click */
 galleryButton.addEventListener("click", (event) => {
     window.location.href = "./portfolio.html";
+});
+
+/* make sure that the list stays in the correct position on window resizing */
+window.addEventListener("resize", (event) => {
+    // First recalculate how much we need to scroll the carousel because display might've been resized
+    galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;
+
+    scrollCarouselTo(projectIndex);
 });
 
 // const myFirstPromise = new Promise((resolve, reject) => {

@@ -10,34 +10,39 @@
     "coverImg": "img/PDAGame/CoverImage.png",
     "files": [
         {
-            "type": "mp4",
+            "type": "video",
             "title": "Labyrinth of Pushdown Level Design",
             "description": "This video is of the Unity editor that showcases the level design of the second level of the game.",
-            "contribution": "I was responsible for decorating and designing both of the levels of the game."
+            "contribution": "I was responsible for decorating and designing both of the levels of the game.",
+            "source": "img/PDAGame/GameLevelDesign.mp4"
         },
         {
-            "type": "mp4",
+            "type": "video",
             "title": "Labyrinth of Pushdown Hand Animations",
             "description": "This video demonstrates the hand animations that transitions between different poses depending on whether two buttons are pressed or only one.",
-            "contribution": "I was responsible for implementing the hand animations. The animation is made using a blend tree that transitions between 4 different poses. In this test, I set up 4 keyboard buttons to test whether the animations work correctly."
+            "contribution": "I was responsible for implementing the hand animations. The animation is made using a blend tree that transitions between 4 different poses. In this test, I set up 4 keyboard buttons to test whether the animations work correctly.",
+            "source": "img/PDAGame/HandAnimation.mp4"
         },
         {
-            "type": "mp4",
+            "type": "image",
             "title": "Labyrinth of Pushdown Main Menu Scene",
             "description": "TThe player spawns in this main menu level where they have the option to choose a level by inserting the sword into the pillar.",
-            "contribution": "These pillars are similar to the other lock pillars in the game that open doors, but this pillar simply transitions to the correct level."
+            "contribution": "These pillars are similar to the other lock pillars in the game that open doors, but this pillar simply transitions to the correct level.",
+            "source": "img/PDAGame/MainMenu.png"
         },
         {
-            "type": "mp4",
+            "type": "image",
             "title": "Mini Map on Left Hand",
             "description": "This mini map is always hovering on the player's left hand and can be viewed by looking at their left hand as if they had a watch on.",
-            "contribution": "I helped to create the mini map system which works by having a large plane with the mini map texture hovering above the entire map and a camera is pointed down at it tracking the player. A second plane is attached to the wrist which displays the view of the camera in the sky."
+            "contribution": "I helped to create the mini map system which works by having a large plane with the mini map texture hovering above the entire map and a camera is pointed down at it tracking the player. A second plane is attached to the wrist which displays the view of the camera in the sky.",
+            "source": "img/PDAGame/MiniMap.png"
         },
         {
-            "type": "mp4",
+            "type": "image",
             "title": "Enemy in the Labyrinth of Pushdown",
             "description": "Simple enemies float around in the levels of the game. They simply track the player and move towards them when they have direct line of sight.",
-            "contribution": "I contributed to making the enemy AI which simply involves the enemy moving towards the player when it has direct line of sight."
+            "contribution": "I contributed to making the enemy AI which simply involves the enemy moving towards the player when it has direct line of sight.",
+            "source": "img/PDAGame/Enemy.png"
         }
     ]
 }

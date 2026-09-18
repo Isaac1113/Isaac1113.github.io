@@ -1,4 +1,4 @@
 [
-    "./data/projectData/PDAGameProject.json",
-    "./data/projectData/SlashProject.json"
+    "data/projectData/PDAGameProject.json",
+    "data/projectData/SlashProject.json"
 ]

@@ -213,7 +213,7 @@ galleryButton.addEventListener("click", (event) => {
     window.location.href = "./portfolio.html";
 });
 
-/* make sure that the list stays in the correct position on window resizing */
+/* make sure that the carousel list stays in the correct position on window resizing */
 window.addEventListener("resize", (event) => {
     // First recalculate how much we need to scroll the carousel because display might've been resized
     galleryMaxScrollWidth = quickViewGallery.scrollWidth - quickViewGallery.clientWidth;

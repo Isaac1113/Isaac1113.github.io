@@ -1,5 +1,6 @@
 const paramsString = window.location.search;
 const projSearchParams = new URLSearchParams(paramsString);
+let currentProjectNum = projSearchParams.has("projNum") ? projSearchParams.get("projNum") : 0;
 
 const projectBaseURL = "https://raw.githubusercontent.com/Isaac1113/Isaac1113.github.io/refs/heads/main/";
 const projectListURL = "https://raw.githubusercontent.com/Isaac1113/Isaac1113.github.io/refs/heads/main/data/projectDataList.json";
@@ -12,7 +13,7 @@ const projectInfoContainer = document.querySelector(".project-info-container");
 const nextButton = document.querySelector(".next");
 
 const pProj = document.querySelector("main > p");
-// pProj.textContent += projSearchParams.get("projNum");
+pProj.textContent += currentProjectNum;
 
 const projectFileList = document.querySelector(".project-file-list");
 
@@ -23,14 +24,20 @@ async function fetchProjectList() {
     projectDataList = await res.json();
 }
 
-/* initialization to get specific project from the list of projects */
+/* get specific project data from the list of projects */
 async function fetchProjectFiles(number) {
-    await fetchProjectList();
-    
     const res = await fetch(`${projectBaseURL}${projectDataList[number]}`);
     projectData = await res.json();
 }
 
+/* initialization function for page load */
+async function pageInitialization() {
+    await fetchProjectList();
+
+    await fetchProjectFiles(currentProjectNum);
+}
+
+pageInitialization();
 
 /* testing leaving and entering animation of data content */
 nextButton.addEventListener("click", (event) => {

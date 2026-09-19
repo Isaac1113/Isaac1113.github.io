@@ -145,7 +145,8 @@ async function scrollCarousel(idx) {
     // set the url src of the youtube embedded player to the correct project
     const firstProjectVideoID = quickViewGalleryData[idx].videoID;
     const firstProjectURL = `https://www.youtube.com/embed/${firstProjectVideoID}?enablejsapi=1&${autoplayString}mute=1&controls=0&disablekb=1&rel=0`;
-    document.getElementById('player').setAttribute('src', firstProjectURL);
+    // document.getElementById('player').setAttribute('src', firstProjectURL);          // changing the src adds to browser history
+    document.getElementById("player").contentWindow.location.replace(firstProjectURL);  // changing iframe contentWindow doesn't add to browser history
 
     // set project description that appears when hovering the project
     pName.textContent = quickViewGalleryData[idx].name;

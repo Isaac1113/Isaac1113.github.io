@@ -1,0 +1,27 @@
+{
+    "name": "FOMO Tracker",
+    "description": "This project was to create a mobile application using Google's Flutter app development framework with the Dart programming language. The FOMO Tracker app was created using Google's Flutter app development framework with the Dart programming language that allows a user to create an account, login, browse and view gams from a NoSQL database, and view information about those games. The purpose of the app was to solve some problem that people might have; one problem that people have now is keeping track of all of their free games. The NoSQL database has information about a set list of games; the information includes a description of the game, extra details of the game, weekly and daily quests. The games can be added to a user's library where they can then view all the information of the game they play in a convenient application. The app uses Google's Firebase SDK to create the NoSQL database as well as the creation of accounts and account login authentication.",
+    "contribution": "This was a solo project that was created using Flutter and the Dart programming language. I was responsible for designing the layout of the app, creating all functionality of the app, testing and fixing the bugs of the app, and also creating the database for the app.",
+    "category": "Mobile App Development",
+    "technology": "Flutter",
+    "time": "January 2023 (3 weeks)",
+    "videoID": "VYvtpDkjufE",
+    "videoTitle": "CS4750 FOMO App Demo",
+    "coverImg": "img/FOMO/FOMOLoginScreen.png",
+    "files": [
+        {
+            "type": "image",
+            "title": "FOMO Tracker Login Screen",
+            "description": "This screenshot displays the FOMO Tracker app running in an emulator using the Flutter framework. Some of the code of the app is also visible which displays an async function that waits for a response from the database to display the correct information.",
+            "contribution": "",
+            "source": "img/FOMO/FOMOLoginScreen.png"
+        },
+        {
+            "type": "image",
+            "title": "Design Document for the FOMO Tracker app",
+            "description": "This document shows the early design of the FOMO Tracker app that displays features that were and weren't implemented in the app.",
+            "contribution": "Unfortunately, the feature to create an alarm before a quest ends was not implemented in this version of the app.",
+            "source": "img/FOMO/FOMOTrackerEarlyDesign.png"
+        }
+    ]
+}

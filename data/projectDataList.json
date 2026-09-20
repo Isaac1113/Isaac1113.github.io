@@ -1,4 +1,10 @@
 [
     "data/projectData/PDAGameProject.json",
-    "data/projectData/SlashProject.json"
+    "data/projectData/SlashProject.json",
+    "data/projectData/BeatshotProject.json",
+    "data/projectData/ImpactMinerProject.json",
+    "data/projectData/RayTracerProject.json",
+    "data/projectData/SonicMiniProject.json",
+    "data/projectData/URGProject.json",
+    "data/projectData/FOMOProject.json"
 ]

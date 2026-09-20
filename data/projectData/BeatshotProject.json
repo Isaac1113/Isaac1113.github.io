@@ -1,0 +1,55 @@
+{
+    "name": "Beatshot",
+    "description": "Beatshot is a rhythm-based arcade game where the player must move and shoot enemies in sync to the beat of the game. Be sure to avoid your own bullets that bounce around the level. Beatshot was made using the Unity game engine as a semester project for the Cal Poly Pomona game development club. Beatshot is an arcade style game where the objective of the game is to simply get the highest score. The player can move to avoid enemies by firing a small projectile that will move them in the opposite direction due to the recoil. More enemies will begin to spawn as the game progresses. The purpose of this project was to get experience with game development and working with a team of people to create a fun and unique game",
+    "contribution": "Created simple UI and menu system to allow the player to select which level to play and display the player’s highest score for each level. Created simple enemy AI and enemy spawners that track the player and progressively spawn more enemies as their score goes up.",
+    "category": "Game Development",
+    "technology": "Unity",
+    "time": "September 2022 - November 2022",
+    "videoID": "TIjEzQFmSDo",
+    "videoTitle": "Unity Project Beatshot Gameplay",
+    "coverImg": "img/Beatshot/CoverImage.png",
+    "files": [
+        {
+            "type": "video",
+            "title": "Smile Level Gameplay",
+            "description": "Gameplay displays level selection, general gameplay loop of the player avoiding enemies and projectiles, and basic spike enemies.",
+            "contribution": "I helped to create basic animation that plays when the spike enemy attacks and basic enemy script to charge at the player every 4th beat.",
+            "source": "img/Beatshot/BeatshotSmileLevel.mp4"
+        },
+        {
+            "type": "video",
+            "title": "Box and Corridor Levels",
+            "description": "More basic gameplay that showcases the laser enemy in the hardest level of the game. The laser enemy randomly moves in a direction while tracking the player's position and fires a hit scan laser attack.",
+            "contribution": "I helped to implement the enemy behavior of the laser enemy. I also helped to make sure the laser enemy doesn't shoot the player on the exact beat so the player can react to attack.",
+            "source": "img/Beatshot/BeatshotGameplay.mp4"
+        },
+        {
+            "type": "image",
+            "title": "Level Select in Beatshot",
+            "description": "The main menu displays the available levels, the player's highest score beside each level and instructions on how to play the game.",
+            "contribution": "I was responsible for creating the buttons to load the proper level and record and display the highest score the player achieved in each level.",
+            "source": "img/Beatshot/Menu.png"
+        },
+        {
+            "type": "image",
+            "title": "Spawning Zones",
+            "description": "Screenshot of the Unity editor displays the box areas in the scene indicating where enemies can spawn.",
+            "contribution": "I helped to create the logic of where enemies can spawn and the frequency of spawning by editing the existing code base.",
+            "source": "img/Beatshot/SpawnZones.png"
+        },
+        {
+            "type": "image",
+            "title": "Difficulty System",
+            "description": "As the player gets higher scorers, they will get wanted stars, similar to GTA. An extra enemy will respawn for each wanted star.",
+            "contribution": "I helped to implement the logic of this system into the existing code base.",
+            "source": "img/Beatshot/Difficulty.png"
+        },
+        {
+            "type": "image",
+            "title": "Spike Enemy Spawning",
+            "description": "Showcases the animation of the simple spike enemy spawning by growing large and then charging the player",
+            "contribution": "I helped to create the animations of the enemy spawning as well as the logic of how and where the enemy spawns by editing the existing code base.",
+            "source": "img/Beatshot/SpikeEnemySpawn.gif"
+        }
+    ]
+}

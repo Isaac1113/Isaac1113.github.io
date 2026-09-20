@@ -1,0 +1,76 @@
+{
+    "name": "Ray Tracer",
+    "description": "This project is a ray tracer project created with Java Processing that is capable of rendering basic shapes, planes, and various quadrics through the use of linear algebra and vector math. The project also implements the Phuong Lighting Model, reflections, and refractions to create more realistic material and lighting effects. The Complex solid geometry features implemented allow for the union, intersection, and difference of the primitive shapes. This project reads a json file containing information of the material, color, type, and location of shapes as well as the position and color of lights to render the scene.",
+    "contribution": "I worked on this project together and contributed to all aspects of the project, but I was mainly responsible for implementing the formulas for rendering spheres, cylinders, and the extra quadric shapes. I implemented the Phuong Lighting Model which renders the shapes with better lighting, such as specular highlights. I also added the logic to be able to rotate and scale the basic shapes.",
+    "category": "Computer Graphics",
+    "technology": "Java Processing",
+    "time": "September 2022 - December 2022",
+    "videoID": "3Us5JCDH3ag",
+    "videoTitle": "Ray Tracer Final Animation",
+    "coverImg": "img/RayTracer/CoverImage.png",
+    "files": [
+        {
+            "type": "image",
+            "title": "A Pyramid of Six Planes",
+            "description": "This pyramid is created with the intersection of six planes that are all oriented differently.",
+            "contribution": "",
+            "source": "img/RayTracer/Triangles.png"
+        },
+        {
+            "type": "image",
+            "title": "Floating Spheres",
+            "description": "Three different colored spheres rendered with basic shadows and a single light source.",
+            "contribution": "",
+            "source": "img/RayTracer/Spheres.png"
+        },
+        {
+            "type": "image",
+            "title": "Earth and the Death Star",
+            "description": "This image depicts two textured spheres with three different colored lights shining on the objects with specular highlights on the Earth.",
+            "contribution": "",
+            "source": "img/RayTracer/EarthAndDeathstar.png"
+        },
+        {
+            "type": "image",
+            "title": "Earth in Front of Mirrors",
+            "description": "A sphere with the texture of the earth rendered in front of two completely reflective planes and three different colored light sources.",
+            "contribution": "",
+            "source": "img/RayTracer/CoverImage.png"
+        },
+        {
+            "type": "image",
+            "title": "Textured Chair",
+            "description": "A chair that is created by rendering many triangles and texturing them.",
+            "contribution": "",
+            "source": "img/RayTracer/Chair.png"
+        },
+        {
+            "type": "image",
+            "title": "Mirrors and Lights",
+            "description": "A sphere in front of three different colored light sources obstructs the lights. Three mirrors are behind the sphere that has shadows cast on it.",
+            "contribution": "",
+            "source": "img/RayTracer/FinalMirrors.png"
+        },
+        {
+            "type": "image",
+            "title": "Earth in a Concave Reflective Sphere",
+            "description": "A textured sphere of Earth is placed inside of a concave sphere that is created with the difference of a reflective sphere and a red sphere.",
+            "contribution": "",
+            "source": "img/RayTracer/EarthInConcaveMirror.png"
+        },
+        {
+            "type": "video",
+            "title": "Lens Passing Spheres",
+            "description": "A lens, created with the intersection of two semi-transparent spheres, passes in front of two spheres. The lens correctly refracts as it passes the two spheres.",
+            "contribution": "",
+            "source": "img/RayTracer/Refraction.mp4"
+        },
+        {
+            "type": "video",
+            "title": "Transparent Hourglass",
+            "description": "The intersection of a hyperboloid and a sphere creates a transparent hourglass while the camera rotates around it. The hourglass correctly refracts a purple sphere and a textured plane of Earth as the camera rotates.",
+            "contribution": "",
+            "source": "img/RayTracer/final_ani_2.mp4"
+        }
+    ]
+}

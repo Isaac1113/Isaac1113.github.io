@@ -26,7 +26,7 @@
         {
             "type": "image",
             "title": "Labyrinth of Pushdown Main Menu Scene",
-            "description": "TThe player spawns in this main menu level where they have the option to choose a level by inserting the sword into the pillar.",
+            "description": "The player spawns in this main menu level where they have the option to choose a level by inserting the sword into the pillar.",
             "contribution": "These pillars are similar to the other lock pillars in the game that open doors, but this pillar simply transitions to the correct level.",
             "source": "img/PDAGame/MainMenu.png"
         },

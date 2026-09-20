@@ -1,0 +1,69 @@
+{
+    "name": "Slash Combat Tech Demo",
+    "description": "This game project was made by following a Udemy course that aims to teach core concepts in Unreal Engine 5 by creating a Souls-like combat system and enemies. I used Unreal Engine 5.2 to implement a Base Character class that implements an Interface to provide functionality of taking damage. The Player and Enemy classes are derived from this class to implement polymorphic behavior with overwritten functions. Player movement mechanics that were implemented were movement, camera control through mouse input, jumping, attacking, dodging, locking on to enemies, and equipping weapons. An extendable item class was created to provide the ability to make a variety of weapons, health pickups, soul pickups, and treasure pickups. Enemies use motion warping in their attack animations and will lose interest when the player moves far enough away from them. Interfaces for picking up items and taking damage were implemented. Points of Interest were added to a large open world map that had a forest and desert biome.",
+    "contribution": "This project was mainly made by following the Udemy course, but I did extend the functionality of the enemies to also allow for a mix of enemies with ranged projectiles and melee weapons. I also added a lock on feature that allows the player to lock onto an enemy and have the camera focus on that enemy. While locked on, the player’s attack animations will make use of motion warping to move the player toward the enemy. The lock on camera can be disabled by double pressing the lock on key which allows the player to regain camera control while still making use of motion warping on the attack animations. I added invincibility frames to the dodge animation as well as a jump attack to make the game have more Souls-like features.",
+    "category": "Game Development",
+    "technology": "Unreal Engine 5",
+    "time": "November 2023 - January 2024",
+    "videoID": "LDJrs22kqb0",
+    "videoTitle": "Labyrinth of Pushdown Palindrome Level",
+    "coverImg": "img/Slash/CoverImage.png",
+    "files": [
+        {
+            "type": "video",
+            "title": "Foot Inverse Kinematics Demonstration",
+            "description": "Inverse kinematics features from Unreal Engine 5 were used to implement the feet being able to stand at different heights.",
+            "contribution": "This is done by calculating the distance that a foot hangs from a height by using a spere trace to get the distance to the floor and using that distance to change the pelvis location and using UE5's IK features to move the legs.",
+            "source": "img/Slash/FootIK.mp4"
+        },
+        {
+            "type": "video",
+            "title": "Item Demonstration",
+            "description": "Here are items that can be picked up either by walking into them or by pressing the 'E' key to pick up weapons.",
+            "contribution": "Weapons, Treasure, Health, and the Soul class are all derived from the Item class to provide general functionality.",
+            "source": "img/Slash/Item.mp4"
+        },
+        {
+            "type": "video",
+            "title": "Weapon Trace and Dodge Invincibility Frames",
+            "description": "Weapons have their their box collision enabled and disabled during the attack animations. A setting can be set of the weapon so that the box trace used can be viewed.",
+            "contribution": "You can see that the invincibility frames work in the dodge animation work as the player doesn't take damage even though the enemy weapon overlaps the player.",
+            "source": "img/Slash/TraceAndDodge.mp4"
+        },
+        {
+            "type": "video",
+            "title": "Enemy Combat Radii",
+            "description": "The four spheres represent the radii where the enemy can attack the player.",
+            "contribution": "The enemy will chase the player when the player is within the pink and blue spheres. When the player is within the green sphere the enemy will do a ranged attack. When the player is within the red sphere, the enemy will do a melee attack.",
+            "source": "img/Slash/EnemyCombat.mp4"
+        },
+        {
+            "type": "video",
+            "title": "Lock On System",
+            "description": "This video demonstrates that the player will have motion warping applied to the attack animations when locked on and close enough to the enemy.",
+            "contribution": "You can also see the camera following the enemy when the player locks onto the enemy.",
+            "source": "img/Slash/LockOn.mp4"
+        },
+        {
+            "type": "image",
+            "title": "Weapon Properties",
+            "description": "Here are some weapon properties that can be changed to make varying weapons. The box extents, damage, box collider, box trace start, and box trace end can be changed to create different weapons.",
+            "contribution": "",
+            "source": "img/Slash/WeaponProperties.png"
+        },
+        {
+            "type": "image",
+            "title": "Enemy Combat Properties 1",
+            "description": "Here are the many combat properties that can be changed to create different enemies.",
+            "contribution": "Animation montages, combat radii, time between attacks, and more can be changed.",
+            "source": "img/Slash/EnemyCombatProperties1.png"
+        },
+        {
+            "type": "image",
+            "title": "Enemy Combat Properties 2",
+            "description": "More enemy combat properties that can be changed.",
+            "contribution": "",
+            "source": "img/Slash/EnemyCombatProperties2.png"
+        }
+    ]
+}

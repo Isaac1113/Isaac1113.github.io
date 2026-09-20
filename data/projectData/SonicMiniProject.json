@@ -1,0 +1,41 @@
+{
+    "name": "Sonic Mini Project",
+    "description": "This project is a simple game created in Unity to simulate the physics and gameplay feel of the original Sonic the Hedgehog game on the Sega GameGear. The player is able to run, roll, jump, and collect rings to survive spike traps and reach the goal. This was a solo project with the purpose being to create a simple 2D game project that mimics the feel of a classic 2D game to learn the basics of good gameplay practices. This project was created for the Game Development course at Cal Poly Pomona.",
+    "contribution": "This was a solo project, so I was responsible for creating the entire project. I created custom movement and gravity to allow the player to be able to run up walls, run through loops maintain their velocity when they jump, change the direction of jumps depending on the angle of the floor and allow the player to spin and roll. Created simple ring collection system and simple death animation coroutine.",
+    "category": "Game Development",
+    "technology": "Unity",
+    "time": "March 2023 (1 week)",
+    "videoID": "zbkv2JOiYco",
+    "videoTitle": "Sonic Unity Project Gameplay",
+    "coverImg": "img/Sanic/SanicCover.png",
+    "files": [
+        {
+            "type": "video",
+            "title": "Slipping and Running in a Loop",
+            "description": "This simple gameplay showcases the player being able to run completely through a loop, and slipping on a sloped surface if the player doesn't have enough speed.",
+            "contribution": "The player is able to run through the loop by having the sonic pill move on the horizontal axis and rotate the sonic pill depending on the normal of the ground. The loop works by having the left and right half deactivate when the sonic pill passes a trigger at a certain speed. Slipping is done by having sonic jump with 0 velocity and locking the player from moving for some time.",
+            "source": "img/Sanic/SanicSlipAndLoop.mp4"
+        },
+        {
+            "type": "video",
+            "title": "Sonic Physics on Slopes",
+            "description": "This gameplay showcases the player being able to maintain their momentum as they leave the ground and also how sonic jumps on sloped surfaces.",
+            "contribution": "The sonic pill keeps his momentum when leaving the ground by applying his velocity from his local coordinate vector to the world coordinate vector. The sonic pill can also jump properly on sloped surfaces by propelling sonic upward from his normal vector.",
+            "source": "img/Sanic/SanicPhysics.mp4"
+        },
+        {
+            "type": "video",
+            "title": "Sonic Death Animation",
+            "description": "This video showcases the simple death animation of sonic falling through the floor when taking damage when he has no rings.",
+            "contribution": "This feature was implemented by creating a coroutine that runs once sonic takes damage and has no rings. The coroutine simply adds a force upward to launch the sonic pill slightly and disables the Rigidbody so that he falls through the floor.",
+            "source": "img/Sanic/SanicDeath.mp4"
+        },
+        {
+            "type": "image",
+            "title": "Simple Level for Sonic Test",
+            "description": "This is a simple screenshot that displays the simple level of the Sonic mini project test.",
+            "contribution": "The level was created using basic shapes and objects in Unity. The platforms that the player can jump through are planes; nothing special needed to be added to the game to allow the sonic pill to pass through them.",
+            "source": "img/Sanic/SanicCover.png"
+        }
+    ]
+}

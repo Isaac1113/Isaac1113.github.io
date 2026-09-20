@@ -1,0 +1,34 @@
+{
+    "name": "URG Racing",
+    "description": "URG Racing is an anti-gravity racing game where the movement of the vehicles is similar to games like F-Zero and Redout. The concept of the game is a racing game with unique vehicles with a synth wave aesthetic. Players can choose between four vehicles and three different tracks to race against simple AI racers. This game was made using the Unity game engine for the Game Development course at Cal Poly Pomona. Players are able to drift their vehicle which will provide them with a boost depending on how long the button is held. Players can also pick up items that respawn along the track to help them win the race. The purpose of this project was to simulate professionally developing a game as well as all relevant documents.",
+    "contribution": "I implemented the movement mechanics of the player controlled vehicles. The movement mechanics consist of accelerating and decelerating, turning the vehicle, camera following the player, custom gravity and friction, drifting and drift boosts. I was also implemented the item system that allows players to pick up items such as a projectile and boost pickup. My role for this project was Quality Assurance, so I would also play the game and fix random bugs in the code.",
+    "category": "Game Development",
+    "technology": "Unity",
+    "time": "March 2023 - May 2023",
+    "videoID": "sj5N3n86bOk",
+    "videoTitle": "URG Racing Unity Project Gameplay",
+    "coverImg": "img/URG/URGCover.png",
+    "files": [
+        {
+            "type": "video",
+            "title": "Drifting Mechanics in URG Racing",
+            "description": "This video demonstrates the drifting mechanics that are available in URG Racing. Drifting for a longer periods of time will provide a small, medium, large, or massive drift boost.",
+            "contribution": "I was responsible for creating the drifting mechanics which function by altering the values for turning the player vehicle when the player holds a button. I also implemented the mechanics in a way that will allow the player to drive and drift at full speed backwards.",
+            "source": "img/URG/Drifting.mp4"
+        },
+        {
+            "type": "video",
+            "title": "Item Mechanics in URG Racing",
+            "description": "This is a demonstration of the item box mechanics and simple items that are available in the game. There are special and basic item boxes. The basic item boxes gives the player a random item from an item pool, while the special item box gives the player the vehicles respective special item.",
+            "contribution": "I was responsible for adding the functionality of being able to pick up item boxes that will respawn after 5 seconds, giving the player a random item from the basic item box or the player's special item from the special item box, and adding the system for the player to use the items.",
+            "source": "img/URG/Items.mp4"
+        },
+        {
+            "type": "image",
+            "title": "Available Vehicles in URG Racing",
+            "description": "This screenshot is of the Unity editor which shows the available vehicles and the settings that can be changed for each vehicle to give them a different play style.",
+            "contribution": "I was responsible for creating the vehicle movement system. I was able to create this system in a way so that my teammates can make manipulate the values and create different types of vehicles. The values that can be modified are the Turn Speed, Drift Turn Speed, Acceleration, Max Speed, Drift Amount, Extra Drift Turn, and Boost Values.",
+            "source": "img/URG/Vehicles.png"
+        }
+    ]
+}

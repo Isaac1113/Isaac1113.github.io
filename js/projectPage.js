@@ -97,7 +97,7 @@ function updatePageData() {
     updateFileData(0);
 
     // load youtube iframe video at bottom of page
-    const projectIframeURL = `https://www.youtube.com/embed/${projectData.viedoID}?enablejsapi=1&mute=1&rel=0`;
+    const projectIframeURL = `https://www.youtube.com/embed/${projectData.videoID}?enablejsapi=1&mute=1&rel=0`;
     document.getElementById("player").contentWindow.location.replace(projectIframeURL);
 }
 

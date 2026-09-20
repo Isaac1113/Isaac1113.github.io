@@ -1,0 +1,34 @@
+{
+    "name": "Impact Miner",
+    "description": "Impact Miner is an endless runner arcade game made in Unity where the player must traverse a procedurally generated track and collide with large minerals to gain points. The player has the option to collide with minerals that give more points but slow their vehicle down or to collide with boost minerals that allow them to continue their current run. Rogue lite elements mechanics are available in the game that allow the player to use their collected minerals to enhance aspects of their ship. This game was made as a semester project for the Cal Poly Pomona Game Development club with the purpose of creating a fun and unique game while getting experience working with people on game development.",
+    "contribution": "For this project, I helped to develop the system that will procedurally generate premade track sequences so that the track is infinitely generated. I also contributed to creating the premade track pieces and spawning system for the minerals that the player must collide with.",
+    "category": "Game Development",
+    "technology": "Unity",
+    "time": "February 2023 - May 2023",
+    "videoID": "sMCxA6FZ1Fc",
+    "videoTitle": "Impact Miner Full Gameplay",
+    "coverImg": "img/ImpactMiner/CoverImage.png",
+    "files": [
+        {
+            "type": "video",
+            "title": "Procedural Generation of Track",
+            "description": "This video shows how track pieces are generated as the game is running in the Unity editor.",
+            "contribution": "I helped to create this system where 5 initial track pieces are generated and once the player enters one of the middle track pieces, the last track piece will be deleted and a new one added to the end of the track. You can see that objects are deleted and added to the hierarchy window in the Unity editor as the game is played.",
+            "source": "img/ImpactMiner/TrackGeneration.mp4"
+        },
+        {
+            "type": "image",
+            "title": "Impact Miner Main Menu",
+            "description": "This screenshot shows off the main menu where the player can view how to play the game, upgrade the ship at the Junkyard, view the current amount of collected minerals, and their farthest distance traveled.",
+            "contribution": "",
+            "source": "img/ImpactMiner/CoverImage.png"
+        },
+        {
+            "type": "image",
+            "title": "Spawn Zones of Minerals",
+            "description": "This screenshot displays the green grid spawn zones where a specific number of minerals will spawn.",
+            "contribution": "I helped to create this system where a random number will be generated for the width and length of the grid and then spawn the mineral in that location. I also helped to populate all of the existing track pieces with the new spawn zone system.",
+            "source": "img/ImpactMiner/SpawnZones.png"
+        }
+    ]
+}

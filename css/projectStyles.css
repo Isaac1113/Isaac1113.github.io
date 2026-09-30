@@ -14,6 +14,7 @@
     width: 100%;
     margin: 0 auto;
     aspect-ratio: 16 / 9;
+    position: relative;
 
     .project-file-list {
         display: flex;
@@ -39,7 +40,41 @@
             scroll-snap-align: center;
             width: 100%;
             height: auto;
-            aspect-ratio: 16 / 9;
+            object-fit: contain;
+        }
+    }
+
+    .arrow-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.5s ease;
+        pointer-events: none;
+
+        .left, .right {
+            pointer-events: auto;
+            width: 20%;
+            height: 20%;
+            min-width: 50px;
+            min-height: 50px;
+            fill: lightgray;
+            stroke: black;
+            stroke-width: 15px;
+            cursor: pointer;
+        }
+
+        .left:hover, .right:hover {
+            fill: white;
+        }
+
+        .left:active, .right:active {
+            fill: darkgray;
         }
     }
 }

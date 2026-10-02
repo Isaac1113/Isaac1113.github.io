@@ -186,6 +186,7 @@ img {
 button {
     margin-top: 3px;
     width: auto;
+    min-width: 125px;
     background: white;
     padding: 0.7em 0.5em;
     border: solid 2px black;

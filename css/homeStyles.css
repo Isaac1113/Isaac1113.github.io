@@ -151,45 +151,51 @@ svg:active {
 
 /* Styling for the gallery list items in the carousel */
 .carousel-gallery {
-  display: flex;
-  width: 80%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;     /* Set the carousel to be our scroll container (set to scroll) */
-  scroll-snap-type: x mandatory;  /* Mandatory snapping images in the x-axis*/
-  scroll-behavior: smooth;
-  scrollbar-width: auto;  /* To hide the scrollbar */
+    display: flex;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;     /* Set the carousel to be our scroll container (set to scroll) */
+    scroll-snap-type: x mandatory;  /* Mandatory snapping images in the x-axis*/
+    scroll-behavior: smooth;
+    scrollbar-width: auto;  /* To hide the scrollbar */
 }
 
 /* TODO: Consider adding slide animation CSS here and creating some selected class so that
         the carousel effects can work in Firefox instead of using animation-timeline
 */
 .carousel-slide {
-  padding: 0px 2.5px;
-  flex-shrink: 0;
-  width: calc(100% / 3); /* Show only 3 slides at a time*/
-  scroll-snap-align: center; /* Snap the slide to the beginning of the img*/
-  animation: slide;
-  animation-timeline: view(inline);
-  
-  img {
-    aspect-ratio: 1 / 1; /* Make the gallery cover images into squares*/
-    width: 100%;
-  } 
+    padding: 0px 2.5px;
+    flex-shrink: 0;
+    width: calc(100% / 3); /* Show only 3 slides at a time*/
+    scroll-snap-align: center; /* Snap the slide to the beginning of the img*/
+    animation: slide;
+    animation-timeline: view(inline);
+    overflow: hidden;
+
+    img {
+        aspect-ratio: 1 / 1; /* Make the gallery cover images into squares*/
+        width: 100%;
+        height: auto;
+
+        /* zoom in on center of cover images */
+        object-fit: cover;
+        transform: scale(1.25);
+    }
 }
 
 @keyframes slide {
-  0%, 45%, 55%, 100% {
-    transform: scale(0.5);
-    border-radius: 20px;
-    filter: blur(6px) brightness(0.8);
-  }
-  
-  50% {
-    transform: scale(1);
-    border-radius: 4px;
-    filter: none;
-  }
+    0%, 45%, 55%, 100% {
+        transform: scale(0.5);
+        border-radius: 20px;
+        filter: blur(6px) brightness(0.8);
+    }
+
+    50% {
+        transform: scale(1);
+        border-radius: 4px;
+        filter: none;
+    }
 }
 
 /* Styling for desktop/larger displays when there is a display width of at least 850 pixels */

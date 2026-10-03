@@ -13,6 +13,10 @@ main {
         width: 100%;        /*to push the h1 all the way to the left*/
         margin-right: auto;
     }
+
+    h1 {
+        padding-bottom: 0.2em;
+    }
 }
 
 /* styling for the text in the education section */

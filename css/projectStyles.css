@@ -1,4 +1,6 @@
-/* styling for the main element that holds all data*/
+
+
+/* styling for the main element that holds all data */
 .project-info-container {
     display: flex;
     flex-flow: column nowrap;
@@ -44,6 +46,7 @@
         }
     }
 
+    /* styles for the arrow overlay on top of the file list */
     .arrow-container {
         position: absolute;
         top: 0;

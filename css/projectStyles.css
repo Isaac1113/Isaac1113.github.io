@@ -206,6 +206,15 @@
         }
     }
 
+    .project-showcase {
+        .buttons-container {
+            flex-flow: row nowrap;
+            width: 100%;
+            max-width: 1050px;
+            justify-content: space-between;
+        }
+    }
+
     .project-examples, .project-showcase {
         width: 90%;
         max-width: none;

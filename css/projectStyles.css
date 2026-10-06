@@ -17,9 +17,24 @@
         text-align: center;
     }
 
+    /* style the text and content layout of the first project info section */
     .project-info {
         display: flex;
         flex-flow: column nowrap;
+        justify-content: start;
+
+        /* reset some properties that are changed when display is large */
+        .project-title-container {
+            .p-title {
+                width: 100%;
+            }
+        }
+
+        /* reset some properties that are changed when display is large */
+        .project-description-container {
+            width: 100%;
+            margin-right: 0;
+        }
         
         .p-cat-and-tech, .p-time, .p-description, .p-contributions {
             padding: 0;
@@ -173,6 +188,24 @@
 
 /* Styling for desktop/larger displays when there is a display width of at least 850 pixels */
 @media(min-width: 850px) {
+    .project-info-container {
+        .project-info {
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            .project-title-container {
+                .p-title {
+                    width: 70%;
+                }
+            }
+
+            .project-description-container {
+                width: 50%;
+                margin-right: 2.5em;
+            }
+        }
+    }
+
     .project-examples, .project-showcase {
         width: 90%;
         max-width: none;

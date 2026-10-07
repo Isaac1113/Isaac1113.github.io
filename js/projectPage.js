@@ -23,7 +23,8 @@ const pContributions = document.querySelector(".p-contributions");
 
 const projectFileList = document.querySelector(".project-file-list");
 const fileTitle = document.querySelector(".file-title");
-
+const fileDescription = document.querySelector(".file-description");
+const fileContribution = document.querySelector(".file-contribution");
 
 /* Load the YouTube IFrame Player API code asynchronously to control iframe youtube videos in js */
 var tag = document.createElement('script');
@@ -104,6 +105,8 @@ function updatePageData() {
 /* update the specific file info that is displayed when a file image/video is clicked */
 function updateFileData(fileIdx) {
     fileTitle.textContent = projectData.files[fileIdx].title;
+    fileDescription.textContent = projectData.files[fileIdx].description;
+    fileContribution.textContent = projectData.files[fileIdx].contribution;
 
     // TODO: set the text of all the other file specific elements
 }

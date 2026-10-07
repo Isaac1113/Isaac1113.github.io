@@ -28,7 +28,7 @@ body {
     padding: 0;
     background: lightgray; /* TODO: Decide on background color*/
     
-    min-width: 300px; /* TODO: decide whether to have min-width */
+    min-width: 300px;
 }
 
 /* some main general styling for some elements */
@@ -69,7 +69,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%; /* vw (view width) units include the width of the vertical scroll bar, too */
-    min-width: 300px; /* TODO: decide whether to have min-width */
+    min-width: 300px; /* needs min-width because body has min-width */
     height: 100vh;
     overflow: hidden;
     display: flex;

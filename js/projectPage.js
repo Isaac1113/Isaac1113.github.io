@@ -90,9 +90,40 @@ function updatePageData() {
             elem = document.createElement("img");
         }
 
+        // set the src of the newly created video or img
         elem.src = projectData.files[i].source;
 
-        projectFileList.appendChild(elem);
+        // wrap video/img in a wrapper structure to properly have an overlay that covers only the element
+        const overlayWrapper = document.createElement("div");
+        overlayWrapper.classList.add("file-title-overlay");
+
+        const currentFileTitle = document.createElement("h3");
+        currentFileTitle.textContent = projectData.files[i].title;
+        currentFileTitle.classList.add("file-title");
+
+        overlayWrapper.appendChild(currentFileTitle);
+
+        const fileWrapper = document.createElement("div");
+        fileWrapper.classList.add("file-wrapper");
+
+        fileWrapper.appendChild(elem);
+        fileWrapper.appendChild(overlayWrapper);
+
+        const elementWrapper = document.createElement("div");
+        elementWrapper.classList.add("element-wrapper");
+        
+        elementWrapper.appendChild(fileWrapper);
+
+        // add events for hovering over the wrapper to show and hide each overlayWrapper for each
+        // individual file
+        elementWrapper.addEventListener("mouseenter", (event) => {
+            overlayWrapper.style.opacity = 1;
+        });
+        elementWrapper.addEventListener("mouseleave", (event) => {
+            overlayWrapper.style.opacity = 0;
+        });
+
+        projectFileList.appendChild(elementWrapper);
     }
 
     updateFileData(0);

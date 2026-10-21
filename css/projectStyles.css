@@ -57,39 +57,88 @@
     }
 }
 
+.project-examples {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    gap: 1em;
+}
+
 /* styling for the list of project files */
 .project-file-container {
     width: 100%;
     max-width: 800px;
-    margin: 0 auto;
-    aspect-ratio: 16 / 9;
-    position: relative;
+    position: relative;     /* to anchor the arrow contanier to the list of files */
 
+    /* styling for the horizontal scrollable list of project files */
     .project-file-list {
         display: flex;
         flex-flow: row nowrap;
+        width: 100%;
+        height: auto;
+        gap: 5vw;
         overflow-x: scroll;
+        scrollbar-width: none;
+        overflow-y: hidden;             /*disable vertical scrolling*/
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
-        margin: 0;
-        padding: 0;
 
-        video {
-            display: block;
-            width: 100%;
-            height: auto;
+        /* styling for each individual element(div) in the list that wraps the file(video or img) */
+        .element-wrapper {
+            display: flex;
+            flex: 0 0 100%;             /*to make each item take the entire view of the div scrollable view*/
+            position: relative;
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+            justify-content: center;
             aspect-ratio: 16 / 9;
-            border: solid 2px red;
-            flex-shrink: 0;
-            scroll-snap-align: center;
-        }
 
-        img {
-            flex-shrink: 0;
-            scroll-snap-align: center;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
+            /* styling for wrapper around the file and an overlay that appears when hovering over the file.
+               This separate div wrapper is needed so that the overlay only covers the width and height of 
+               the img/video and doesn't extend to the edges of the scrollable div when the file doesn't.
+            */
+            .file-wrapper {
+                display: flex;
+                position: relative;
+
+                /* styling for the gray overlay that covers only the file when hovered */
+                .file-title-overlay {
+                    display: flex;
+                    align-items: flex-end;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: rgb(0 0 0 / 0.25);
+                    opacity: 0;
+                    cursor: pointer;
+
+                    /* styling for the title of the image that appears in the overlay */
+                    .file-title {
+                        padding: 0.2em 0.2em;
+                        color: white;
+                        border-top: none;
+                        font-size: 1.6rem;
+                        line-height: 1.25em;
+                    }
+                }
+
+
+                video {
+                    width: 100%;
+                    height: auto;
+                }
+
+                /* unsetting the aspect-ratio because some of the images aren't 16 / 9.
+                   Setting object-fit to contain will keep the original dimensions of the img
+                   without warping.
+                */
+                img {
+                    aspect-ratio: unset;
+                    object-fit: contain;
+                }
+            }
         }
     }
 
@@ -144,18 +193,18 @@
     flex-flow: column nowrap;
     background-color: lightgray;
     position: absolute;
-    visibility: visible;
+    visibility: hidden;
     z-index: 3000;
     top: 0;
     left: 0;
     width: 100%;        /* vw (view width) units include the width of the vertical scroll bar, too */
     min-width: 300px;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden;   /* TODO: make sure to set document.body.style.overflow = hidden; Delete this line later */
     opacity: 1;
     transition: opacity 1s ease,
                 visibility 1s ease;
-    /* overscroll-behavior: contain; */
+    overscroll-behavior: contain;
 
     /* to make the content scrollable if media content overflows down and hide scrollbar */
     overflow-y: scroll;
@@ -218,7 +267,7 @@
     flex-flow: column nowrap;
     align-items: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     gap: 1em;
 
     #player {

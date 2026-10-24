@@ -94,6 +94,7 @@
             scroll-snap-stop: always;
             justify-content: center;
             aspect-ratio: 16 / 9;
+            width: 100%;
 
             /* styling for wrapper around the file and an overlay that appears when hovering over the file.
                This separate div wrapper is needed so that the overlay only covers the width and height of 
@@ -132,11 +133,14 @@
 
                 /* unsetting the aspect-ratio because some of the images aren't 16 / 9.
                    Setting object-fit to contain will keep the original dimensions of the img
-                   without warping.
+                   without warping. Also, unset the width to make sure the img doesn't stretch
+                   to fit the entire div container width to prevent its own div container from
+                   stretching which will in turn stretch the file-title-overlay past the img.
                 */
                 img {
                     aspect-ratio: unset;
                     object-fit: contain;
+                    width: unset;
                 }
             }
         }
